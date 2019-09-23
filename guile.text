@@ -1,0 +1,40 @@
+Usage: guile [OPTION]... [FILE]...
+Evaluate code with Guile, interactively or from a script.
+
+  [-s] FILE      load source code from FILE, and exit
+  -c EXPR        evalute expression EXPR, and exit
+  --             stop scanning arguments; run interactively
+
+The above switches stop argument processing, and pass all
+remaining arguments as the value of (command-line).
+If FILE begins with `-' the -s switch is mandatory.
+
+  -L DIRECTORY   add DIRECTORY to the front of the module load path
+  -C DIRECTORY   like -L, but for compiled files
+  -x EXTENSION   add EXTENSION to the front of the load extensions
+  -l FILE        load source code from FILE
+  -e FUNCTION    after reading script, apply FUNCTION to
+                 command line arguments
+  --language=LANG  change language; default: scheme
+  -ds            do -s script at this point
+  --debug        start with the "debugging" VM engine
+  --no-debug     start with the normal VM engine (backtraces but
+                 no breakpoints); default is --debug for interactive
+                 use, but not for `-s' and `-c'.
+  --auto-compile compile source files automatically
+  --fresh-auto-compile  invalidate auto-compilation cache
+  --no-auto-compile  disable automatic source file compilation;
+                 default is to enable auto-compilation of source
+                 files.
+  --listen[=P]   listen on a local port or a path for REPL clients;
+                 if P is not given, the default is local port 37146
+  -q             inhibit loading of user init file
+  --use-srfi=LS  load SRFI modules for the SRFIs in LS,
+                 which is a list of numbers like "2,13,14"
+  -h, --help     display this help and exit
+  -v, --version  display version information and exit
+  \              read arguments from following script lines
+
+Report bugs to: bug-guile@gnu.org
+GNU Guile home page: <http://www.gnu.org/software/guile/>
+General help using GNU software: <http://www.gnu.org/gethelp/>

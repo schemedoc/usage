@@ -1,0 +1,34 @@
+
+Usage: cyclone [OPTIONS] FILENAME
+Run the Cyclone Scheme compiler.
+
+General options:
+
+ -A directory    Append directory to the list of directories that are searched 
+                 in order to locate imported libraries.
+ -I directory    Prepend directory to the list of directories that are searched 
+                 in order to locate imported libraries.
+ -CP cc-commands Specify a custom command line for the C compiler to compile
+                 a program module. See Makefile.config for an example of how
+                 to construct such a command line.
+ -CE cc-commands Specify a custom command line for the C compiler to compile
+                 an executable.
+ -CL cc-commands Specify a custom command line for the C compiler to compile
+                 a library module.
+ -CS cc-commands Specify a custom command line for the C compiler to compile
+                 a shared object module.
+ -d              Only generate intermediate C files, do not compile them
+ -t              Show intermediate trace output in generated C files
+ -h, --help      Display usage information
+ -v              Display version information
+ -vn             Display version number
+
+Optimization options:
+
+ -Ox             Optimization level, higher means more optimizations will
+                 be used. Set to 0 to disable optimizations.
+ -memoization-optimizations     Memoize recursive calls to pure functions, 
+                                where possible (enabled by default).
+ -no-memoization-optimizations  Disable the above memoization optimization.
+
+

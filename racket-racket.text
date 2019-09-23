@@ -1,0 +1,56 @@
+Welcome to Racket v7.2.
+racket [<option> ...] <argument> ...
+ File and expression options:
+  -e <exprs>, --eval <exprs> : Evaluate <exprs>, prints results
+  -f <file>, --load <file> : Like -e '(load "<file>")' without printing
+  -t <file>, --require <file> : Like -e '(require (file "<file>"))' [*]
+  -l <path>, --lib <path> : Like -e '(require (lib "<path>"))' [*]
+  -p <package> : Like -e '(require (planet "<package>")' [*]
+  -r <file>, --script <file> : Same as -f <file> -N <file> --
+  -u <file>, --require-script <file> : Same as -t <file> -N <file> --
+  -k <n> <m> <p> : Load executable-embedded code from offset <n> to <p>
+  -m, --main : Call `main' with command-line arguments, print results
+  [*] Also `require's a `main' submodule, if any
+ Interaction options:
+  -i, --repl : Run interactive read-eval-print loop; implies -v
+  -n, --no-lib : Skip `(require (lib "<init-lib>"))' for -i/-e/-f/-r
+  -v, --version : Show version
+  -V, --no-yield : Skip `((executable-yield-handler) <status>)' on exit
+ Configuration options:
+  -c, --no-compiled : Disable loading of compiled files
+  -q, --no-init-file : Skip load of ~/.racketrc for -i
+  -I <path> : Set <init-lib> to <path> (sets language)
+  -X <dir>, --collects <dir> : Main collects at <dir> (or "" disables all)
+  -S <dir>, --search <dir> : More collects at <dir> (after main collects)
+  -G <dir>, --config <dir> : Main configuration directory at <dir>
+  -A <dir>, --addon <dir> : Addon directory at <dir>
+  -U, --no-user-path : Ignore user-specific collects, etc.
+  -R <paths>, --compiled <paths> : Set compiled-file search roots to <paths>
+  -C, --cross : Cross-build mode; save current collects and config as host
+  -N <file>, --name <file> : Sets `(find-system-path 'run-file)' to <file>
+  -j, --no-jit : Disable the just-in-time compiler
+  -M, --compile-any : Compile to machine-independent form
+  -d, --no-delay: Disable on-demand loading of syntax and code
+  -b, --binary : Read stdin and write stdout/stderr in binary mode
+  -W <levels>, --warn <levels> : Set stderr logging to <levels>
+  -O <levels>, --stdout <levels> : Set stdout logging to <levels>
+  -L <levels>, --syslog <levels> : Set syslog logging to <levels>
+ Meta options:
+  -- : No argument following this switch is used as a switch
+  -h, --help : Show this information and exits, ignoring other options
+Default options:
+ If only configuration options are provided, -i is added
+ If only configuration options are before the first argument, -u is added
+ If -t/-l/-p/-u apears before the first -i/-e/-f/-r, -n is added
+ <init-lib> defaults to racket/init
+Switch syntax:
+ Multiple single-letter switches can be collapsed, with arguments placed
+   after the collapsed switches; the first collapsed switch cannot be --
+ Example: `-ifve file expr' is the same as `-i -f file -v -e expr'
+Start-up sequence:
+ 1. Set `current-library-collection-paths'
+ 2. Require `(lib "<init-lib>")' [when -i/-e/-f/-r, unless -n]
+ 3. Evaluate/load expressions/files in order, until first error
+ 4. Load "~/.racketrc" [when -i]
+ 5. Run read-eval-print loop [when -i]
+ 6. Run `((executable-yield-handler) <status>)' [unless -V]

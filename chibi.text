@@ -1,0 +1,19 @@
+usage: chibi-scheme [<options> ...] [<file> <args> ...]
+  -f           - case-fold symbols
+  -q           - "quick" load, use the core -xchibi language
+  -Q           - extra "quick" load, -xchibi.primitive
+  -V           - print version information
+  -D <feature> - add <feature> to the list of features
+  -h <size>    - specify the initial heap size
+  -A <dir>     - append a module search directory
+  -I <dir>     - prepend a module search directory
+  -m <module>  - import a module
+  -x <module>  - import only a module
+  -e <expr>    - evaluate an expression
+  -p <expr>    - evaluate and print an expression
+  -r[<main>]   - run a SRFI-22 main
+  -R[<module>] - run main from a module
+  -t <module.proc> - trace a procedure
+  -T           - disable TCO (dangerous)
+  -d <file>    - dump an image file and exit
+  -i <file>    - load an image file

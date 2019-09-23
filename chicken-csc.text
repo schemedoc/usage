@@ -1,0 +1,201 @@
+Usage: csc [OPTION ...] [FILENAME ...]
+
+  `csc' is a driver program for the CHICKEN compiler. Files given on the
+  command line are translated, compiled or linked as needed.
+
+  FILENAME is a Scheme source file name with optional extension or a
+  C/C++/Objective-C source, object or library file name with extension. OPTION
+  may be one of the following:
+
+  General options:
+
+    -h  -help                      display this text and exit
+    -v  -verbose                   show compiler notes and tool-invocations
+    -vv                            display information about translation
+                                    progress
+    -vvv                           display information about all compilation
+                                    stages
+    -version                       display Scheme compiler version and exit
+    -release                       display release number and exit
+
+  File and pathname options:
+
+    -o -output-file FILENAME       specifies target executable name
+    -I -include-path PATHNAME      specifies alternative path for included
+                                    files
+    -to-stdout                     write compiler to stdout (implies -t)
+    -s -shared -dynamic            generate dynamically loadable shared object
+                                    file
+
+  Language options:
+
+    -D  -DSYMBOL  -feature SYMBOL  register feature identifier
+    -no-feature SYMBOL             disable builtin feature identifier
+    -c++                           compile via a C++ source file (.cpp) 
+    -objc                          compile via Objective-C source file (.m)
+
+  Syntax related options:
+
+    -i -case-insensitive           don't preserve case of read symbols    
+    -K -keyword-style STYLE        enable alternative keyword-syntax
+                                    (prefix, suffix or none)
+       -no-parentheses-synonyms    disables list delimiter synonyms
+       -no-symbol-escape           disables support for escaped symbols
+       -r5rs-syntax                disables the CHICKEN extensions to
+                                    R5RS syntax
+    -compile-syntax                macros are made available at run-time
+    -j -emit-import-library MODULE write compile-time module information into
+                                    separate file
+    -J -emit-all-import-libraries  emit import-libraries for all defined modules
+    -no-module-registration        do not generate module registration code
+    -no-compiler-syntax            disable expansion of compiler-macros
+    -m -module NAME                wrap compiled code in a module
+
+  Translation options:
+
+    -x  -explicit-use              do not use units `library' and `eval' by
+                                    default
+    -P  -check-syntax              stop compilation after macro-expansion
+    -A  -analyze-only              stop compilation after first analysis pass
+
+  Debugging options:
+
+    -w  -no-warnings               disable warnings
+    -d0 -d1 -d2 -d3 -debug-level NUMBER
+                                   set level of available debugging information
+    -no-trace                      disable rudimentary debugging information
+    -debug-info                    enable debug-information in compiled code for use
+                                    with an external debugger
+    -profile                       executable emits profiling information 
+    -accumulate-profile            executable emits profiling information in
+                                    append mode
+    -profile-name FILENAME         name of the generated profile information
+                                    file
+    -consult-types-file FILENAME   load additional type database
+
+  Optimization options:
+
+    -O -O0 -O1 -O2 -O3 -O4 -O5 -optimize-level NUMBER
+                                   enable certain sets of optimization options
+    -optimize-leaf-routines        enable leaf routine optimization
+    -no-usual-integrations         standard procedures may be redefined
+    -u  -unsafe                    disable safety checks
+    -local                         assume globals are only modified in current
+                                    file
+    -b  -block                     enable block-compilation
+    -disable-interrupts            disable interrupts in compiled code
+    -f  -fixnum-arithmetic         assume all numbers are fixnums
+    -disable-stack-overflow-checks disables detection of stack-overflows
+    -inline                        enable inlining
+    -inline-limit LIMIT            set inlining threshold
+    -inline-global                 enable cross-module inlining
+    -specialize                    perform type-based specialization of primitive calls
+    -oi -emit-inline-file FILENAME generate file with globally inlinable
+                                    procedures (implies -inline -local)
+    -consult-inline-file FILENAME  explicitly load inline file
+    -ot  -emit-types-file FILENAME write type-declaration information into file
+    -no-argc-checks                disable argument count checks
+    -no-bound-checks               disable bound variable checks
+    -no-procedure-checks           disable procedure call checks
+    -no-procedure-checks-for-usual-bindings
+                                   disable procedure call checks only for usual
+                                    bindings
+    -no-procedure-checks-for-toplevel-bindings
+                                   disable procedure call checks for toplevel
+                                    bindings
+    -strict-types                  assume variable do not change their type
+    -clustering                    combine groups of local procedures into dispatch
+                                     loop
+    -lfa2                          perform additional lightweight flow-analysis pass
+
+  Configuration options:
+
+    -unit NAME                     compile file as a library unit
+    -uses NAME                     declare library unit as used.
+    -heap-size NUMBER              specifies heap-size of compiled executable
+    -nursery NUMBER  -stack-size NUMBER
+                                   specifies nursery size of compiled
+                                   executable
+    -X -extend FILENAME            load file before compilation commences
+    -prelude EXPRESSION            add expression to beginning of source file
+    -postlude EXPRESSION           add expression to end of source file
+    -prologue FILENAME             include file before main source file
+    -epilogue FILENAME             include file after main source file
+
+    -e  -embedded                  compile as embedded
+                                    (don't generate `main()')
+    -gui                           compile as GUI application
+    -link NAME                     link extension with compiled executable
+                                    (implies -uses)
+    -R  -require-extension NAME    require extension and import in compiled
+                                    code
+    -dll -library                  compile multiple units into a dynamic
+                                    library
+    -libdir DIRECTORY              override directory for runtime library
+
+  Options to other passes:
+
+    -C OPTION                      pass option to C compiler
+    -L OPTION                      pass option to linker
+    -I<DIR>                        pass \"-I<DIR>\" to C compiler
+                                    (add include path)
+    -L<DIR>                        pass \"-L<DIR>\" to linker
+                                    (add library path)
+    -k                             keep intermediate files
+    -c                             stop after compilation to object files
+    -t                             stop after translation to C
+    -cc COMPILER                   select other C compiler than the default
+    -cxx COMPILER                  select other C++ compiler than the default
+    -ld COMPILER                   select other linker than the default 
+    -static                        link with static CHICKEN libraries and
+                                    extensions (if possible)
+    -F<DIR>                        pass \"-F<DIR>\" to C compiler
+                                    (add framework header path on Mac OS X)
+    -framework NAME                passed to linker on Mac OS X
+    -rpath PATHNAME                add directory to runtime library search path
+    -Wl,...                        pass linker options
+    -strip                         strip resulting binary
+
+  Inquiry options:
+
+    -home                          show home-directory (where support files go)
+    -cflags                        show required C-compiler flags and exit
+    -ldflags                       show required linker flags and exit
+    -libs                          show required libraries and exit
+    -cc-name                       show name of default C compiler used
+    -cxx-name                      show name of default C++ compiler used
+    -ld-name                       show name of default linker used
+    -dry-run                       just show commands executed, don't run them
+                                    (implies `-v')
+
+  Obscure options:
+
+    -debug MODES                   display debugging output for the given modes
+    -compiler PATHNAME             use other compiler than default `chicken'
+    -raw                           do not generate implicit init- and exit code
+    -emit-external-prototypes-first
+                                   emit prototypes for callbacks before foreign
+                                    declarations
+    -regenerate-import-libraries   emit import libraries even when unchanged
+    -ignore-repository             do not refer to repository for extensions
+    -keep-shadowed-macros          do not remove shadowed macro
+    -host                          compile for host when configured for
+                                    cross-compiling
+    -private-repository            load extensions from executable path
+    -deployed                      link support file to be used from a deployed 
+                                    executable (sets `rpath' accordingly, if supported
+                                    on this platform)
+    -no-elevation                  embed manifest on Windows to supress elevation
+                                    warnings for programs named `install' or `setup'
+
+  Options can be collapsed if unambiguous, so
+
+    -vkfO
+
+  is the same as
+
+    -v -k -fixnum-arithmetic -optimize
+
+  The contents of the environment variable CSC_OPTIONS are implicitly passed to
+  every invocation of `csc'.
+

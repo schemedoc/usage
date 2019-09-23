@@ -1,0 +1,48 @@
+Usage: larceny [ OPTIONS ][ PROGRAM ][-- ARGUMENTS]
+
+Options:
+  -r7r6
+     Imports all of the standard R7RS/R6RS libraries.
+     If no program is specified, enters a read/eval/print loop (REPL).
+  -r7rs, -r7
+     Same as -r7r6 but imports only the (scheme base) library.
+  -r6rs, r6
+     Execute the specified R6RS program.
+     (An "absolute requirement" of the R6RS forbids REPLs.)
+  -r5rs, r5
+     Execute the program in R5RS mode, or enter R5RS-style REPL.
+  -D <identifier>
+     Declares the identifier as a supported feature for R7RS cond-expand.
+  -I <directories>
+     Search these directories first when importing libraries.
+  -A <directories>
+     Search these directories last when importing libraries.
+     Use colon (Unix) or semicolon (Windows) to separate directories.
+  -nofoldcase
+     Symbols are case-sensitive (the default; #!fold-case overrides).
+  -foldcase
+     Symbols are case-insensitive (#!no-fold-case overrides).
+  -latin1
+     Use Latin-1 as default for console and file io.
+  -utf8
+     Use UTF-8 as default for console and file io.
+  -quiet
+     Suppress nonessential messages.
+  -nobanner
+     Suppress runtime startup banner (implied by -program, -r6).
+  -- <argument> ...
+     Tell (command-line) to return (<larcenyname> <argument> ...)
+     This option, if present, must come last.
+     With the -r5 option, Larceny's standard heap interprets
+     these command line arguments specially:
+         -e <expr>
+           Evaluate <expr> at startup.
+         <file>
+           Load the specified file (if it exists) at startup.
+  -help
+     Print this message.
+  -wizard
+     Print this message as well as help on wizard options.
+
+The Larceny User's Manual is available on the web at
+  http://www.larcenists.org/doc.html/

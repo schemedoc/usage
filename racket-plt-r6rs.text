@@ -1,0 +1,14 @@
+plt-r6rs [ <option> ... ] [<file>] [<arg>] ...
+ where <option> is one of
+/ --install : install libraries from <file>, or stdin if no <file> provided
+\ --compile : compile <file> and all dependencies
+/ --all-users : install into main installation
+| --collections <dir> : install into <dir>
+\ --force : overwrite existing libraries
+* ++path <dir> : use <dir> as a container of library dirs (i.e., collections)
+  --help, -h : Show this help
+  -- : Do not treat any remaining argument as a switch (at this level)
+ * Asterisks indicate options allowed multiple times.
+ /|\ Brackets indicate mutually exclusive options.
+ Multiple single-letter switches can be combined after one `-'; for
+  example: `-h-' is the same as `-h --'

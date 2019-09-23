@@ -1,0 +1,20 @@
+Usage: mosh <options> [file]
+options:
+  -5                Run with safe mode (Almost R5RS).
+  -V                Prints version and exits.
+  -v                Prints version and exits.
+  -h                Prints this help.
+  -p                Executes with profiler.
+  --help            Prints this help.
+  --disable-acc     disables auto-compile-cache.
+  --clean-acc       cleans auto-compile-cache.
+  --verbose         Show library serialisation messages.
+  --loadpath=<path> Add library loadpath.
+
+ MOSH_LOADPATH
+  You can add library loadpath by using environment variable MOSH_LOADPATH, with ':'(use ';' for Windows) separated paths.
+
+bug report:
+  http://code.google.com/p/mosh-scheme/issues
+  higepon@users.sourceforge.jp
+

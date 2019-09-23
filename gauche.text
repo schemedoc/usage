@@ -1,0 +1,95 @@
+gosh: invalid option -- 'h'
+Usage: gosh [-biqV][-I<path>][-A<path>][-u<module>][-m<module>][-l<file>][-L<file>][-e<expr>][-E<expr>][-p<type>][-F<feature>][-r<standard>][-f<flag>][--] [file]
+Options:
+  -V       Prints version and exits.
+  -b       Batch mode.  Doesn't print prompts.  Supersedes -i.
+  -i       Interactive mode.  Forces to print prompts.
+  -q       Doesn't read the default initialization file.
+  -I<path> Adds <path> to the head of the load path list.
+  -A<path> Adds <path> to the tail of the load path list.
+  -u<module> (use) load and import <module>
+  -l<file> Loads <file> before executing the script file or
+           entering repl.
+  -L<file> Like -l, but doesn't complain if <file> doesn't exist.
+  -e<expr> Evaluate Scheme expression <expr> before executing
+           the script file or entering repl.
+  -E<expr> Similar to -e, but reads <expr> as if it is surrounded
+           by parenthesis.
+  -m<module> When the script file is given, this option specifies the
+           name of the module in which the 'main' procedure is defined.
+           By default, the 'main' procedure in the user module is called
+           after loading the script (srfi-22).  This option allows to call
+           a main procedure in the different module.
+  -p<type> Turns on the profiler.  <Type> can be 'time' or 'load'.
+  -F<feature> Makes <feature> available in cond-expand forms
+           If <feature> begins with '-', it removes the feature (without
+           preceding minus) instead.
+  -v<version> If <version> is not the running Gauche's version, but
+           the specified version is installed in the system, execute
+           that version's gosh instead.  This is useful when you want
+           to invoke specific version of Gauche.  <Version> must be
+           0.9.6 or later.
+  -r<standard>  Starts gosh with the default environment defined
+           in RnRS, where n is determined by <standard>.  The following
+           values are supported as <standard>.
+      7               R7RS (R7RS-small)
+  -f<flag> Sets various flags
+      case-fold       uses case-insensitive reader (as in R5RS)
+      load-verbose    report while loading files
+      include-verbose report while including files
+      warn-legacy-syntax
+                      print warning when legacy Gauche syntax is encountered
+      no-inline       don't inline procedures & constants (combined
+                      no-inline-globals, no-inline-locals, and
+                      no-inline-constants.)
+      no-inline-globals
+                      don't inline global procedures.
+      no-inline-locals
+                      don't inline local procedures.
+      no-inline-constants
+                      don't inline constants.
+      no-lambda-lifting-pass
+                      don't run lambda lifting pass.
+      no-post-inline-pass
+                      don't run post-inline optimization pass.
+      no-source-info  don't preserve source information for debugging
+      test            test mode, to run gosh inside the build tree
+Environment variables:
+  GAUCHE_AVAILABLE_PROCESSORS
+      Value must be an integer.  If set, it overrides the number of
+      available processors on the system, returned from
+      `sys-available-processors'.
+  GAUCHE_DYNLOAD_PATH
+      Directories separated by colon (on Unix) or semilcolon (on Windows)
+      to search dynamically loadable files.
+  GAUCHE_EDITOR
+      Path of the editor invoked with `ed'.
+  GAUCHE_KEYWORD_IS_SYMBOL
+      If set, keywords become subclass of symbols, to be fully R7RS
+      conformant.  This is the current default behavior.  Legacy code may
+      break in this mode.  See ``Keyword and symbol integration'' section
+      of the manual for the details.
+  GAUCHE_KEYWORD_DISJOINT
+      If set, keywords are of their own disjoint type, rather than symbols.
+      This is old default behavior, in 0.9.7 and before.  See ``Keyword and
+      symbol integration'' section of the manual for the details.
+  GAUCHE_LOAD_PATH
+      Directories separated by colon (on Unix) or semilcolon (on Windows)
+      to search scheme files to load.
+  GAUCHE_QUASIRENAME_MODE
+      Customize quasirename compatibility mode.  See 'Explicit-renaming
+      macro transformer' section of the manual for the details.  GAUCHE_READ_EDIT
+      If set, and the terminal is capable, turn on the experimental
+      line-editing feature in REPL.
+  GAUCHE_REPL_NO_PPRINT
+      If set, suppress using pretty printer in REPL.
+  GAUCHE_SUPPRESS_WARNING
+      Suppress warnings displayed by ``warn''.  This should be a quick-fix
+      when you need to get rid of warnings but do not have time to fix the
+      root cause.
+  GAUCHE_TEST_RECORD
+      When set, it specifies a file name to accumulated test statistics.
+      See ``gauche.test'' manual entry for the details.
+  GAUCHE_TEST_REPORT_ERROR
+      When set, a stack trace is printed when an error is raised during
+      running the test code in ``gauche.test'' framework.

@@ -1,0 +1,20 @@
+usage: scheme [options and files]
+options:
+  -q, --quiet                             suppress greeting and prompt
+  --script <path>                         run as shell script
+  --program <path>                        run rnrs program as shell script
+  --libdirs <dir>:...                     set library directories
+  --libexts <ext>:...                     set library extensions
+  --compile-imported-libraries            compile libraries before loading
+  --import-notify                         enable import search messages
+  --optimize-level <0 | 1 | 2 | 3>        set optimize-level
+  --debug-on-exception                    on uncaught exception, call debug
+  --eedisable                             disable expression editor
+  --eehistory <off | path>                expression-editor history file
+  --enable-object-counts                  have collector maintain object counts
+  --retain-static-relocation              keep reloc info for compute-size, etc.
+  -b <path>, --boot <path>                load boot file
+  --verbose                               trace boot/heap search process
+  --version                               print version and exit
+  --help                                  print help and exit
+  --                                      pass through remaining args

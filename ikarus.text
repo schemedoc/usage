@@ -1,0 +1,24 @@
+
+Options for running ikarus scheme:
+
+  ikarus -h
+    Prints this help message then exits.
+
+  ikarus [-b <bootfile>] --r6rs-script <scriptfile> opts ...
+    Starts ikarus in r6rs-script mode.  The script file is treated
+    as an R6RS-script.  The options opts ... can be obtained using
+    the "command-line" procedure in the (rnrs programs) library.
+
+  ikarus [-b <bootfile>] <file> ... [-- opts ...]
+    Starts ikarus in interactive mode.  Each of the files is first
+    loaded into the interaction environment before the interactive
+    repl is started.  The options opts can be obtained using the
+    "command-line" procedure.
+  
+  If the option [-b <bootfile>] is provided, the bootfile is used
+  as the system's initial boot file from which the environment is
+  initialized.  If the -b option is not supplied, the default boot
+  file is used.  The current default boot file location is
+  "/usr/local/lib/ikarus/ikarus.boot".
+  Consult the Ikarus Scheme User's Guide for more details.
+

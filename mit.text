@@ -1,0 +1,41 @@
+Copyright (C) 2019 Massachusetts Institute of Technology
+This is free software; see the source for copying conditions. There is NO
+warranty; not even for MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
+
+Image saved on Saturday August 10, 2019 at 6:28:48 PM
+  Release 10.1.10   || Microcode 15.3 || Runtime 15.7 || SF 4.41
+  LIAR/x86-64 4.118
+
+ADDITIONAL OPTIONS supported by this band:
+
+-- ARG ...
+  Appends all ARGs (until the end of the command-line)
+  to the list (command-line-arguments).
+
+--args ARG ...
+  Appends ARGs (until the next keyword)
+  to the list (command-line-arguments).
+
+--edit
+  Causes Edwin to start immediately after Scheme.
+
+--eval ARG ...
+  Evaluates the argument expressions as if in the REPL.
+
+--load ARG ...
+  Loads the argument files as if in the REPL.
+  In batch mode, loading messages are suppressed.
+
+--no-init-file
+  Inhibits automatic loading of the ~/.scheme.init file.
+
+--no-suspend-file
+  Inhibits automatic saving of bands to ~/scheme_suspend.
+
+--suspend-file
+  If specified, Scheme saves a band to ~/scheme_suspend on reception
+  of some signals.  This is unavailable on some operating systems.
+  Under Unix, this is triggered by SIGUSR1 and SIGPWR, and also, if
+  Scheme is not running under Emacs, SIGHUP.
+
+Ceterum censeo Carthaginem esse delendam.

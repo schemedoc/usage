@@ -1,0 +1,192 @@
+Vicare Scheme, a compiler for R6RS Scheme.
+Usage:
+
+vicare [OPTIONS] [FILENAME]                     [-- [PROGRAM OPTS]]
+vicare [OPTIONS] --r6rs-script PROGRAM          [-- [PROGRAM OPTS]]
+vicare [OPTIONS] --binary-program PROGRAM       [-- [PROGRAM OPTS]]
+vicare [OPTIONS] --compile-library LIBFILE
+vicare [OPTIONS] --compile-dependencies PROGRAM
+vicare [OPTIONS] --compile-program PROGRAM
+vicare [OPTIONS] --compile FILE
+
+the  OPTIONS are  interpreted by  vicare, PROGRAM  OPTS can  be obtained
+using the COMMAND-LINE procedure in the (rnrs programs) library.
+
+Options controlling execution modes:
+
+   --r6rs-script PROGRAM
+        Start Vicare  in R6RS-script mode.  The PROGRAM  file is handled
+       	as an R6RS program.
+
+   --binary-program PROGRAM
+        Start  Vicare in  compiled-program  mode.  The  PROGRAM file  is
+       	handled as a precompiled R6RS program: loaded and executed.
+
+   --compile-library LIBFILE
+        Load the  R6RS library source  LIBFILE, compile it and  save the
+        result in the FASL repository.
+
+   --compile-dependencies PROGRAM
+        Load  the R6RS program  PROGRAM, compile all the  libraries upon
+	which it depends  and save them in the FASL repository.  PROGRAM
+	itself is not evaluated.
+
+   --compile-program PROGRAM
+        Load  the R6RS program  PROGRAM, compile it and store it as FASL
+        file.  PROGRAMitself is not evaluated.
+
+   --compile FILE
+        Load the  selected file, recognise  it as program or  library by
+	the file  extension (.sps or .sls),  compile it and store  it as
+	FASL file.
+
+When none  of these options is given,  but a FILENAME is  present on the
+command line: act as if the  --r6rs-script option had been used with the
+given file name.   If no FILENAME is present on  the command line: enter
+the REPL.
+
+Other options:
+
+   -b BOOTFILE
+   --boot BOOTFILE
+        Select the boot image.  The default is /usr/local/vicare/lib/vicare-scheme/vicare.boot
+
+   --no-rcfile
+        Disable loading of run-command files.
+
+   -o OFILE
+   --output OFILE
+        Select the pathname of the output file.
+
+   --rcfile RCFILE
+        Load and evaluate  RCFILE as an R6RS program  at startup, before
+	loading libraries and running the main script.  This  option can
+        be used multiple times.
+
+   -l LIBFILE
+   --load-library LIBFILE
+        Load LIBFILE expecting it to contain one or more R6RS libraries;
+        after executing the RC files, load the libraries in the internal
+        collection but do not add  them to any environment.  This option
+        can be used multiple times.
+
+   --no-greetings
+        Suppress greetings when entering the REPL.
+
+   -A DIRECTORY
+   --source-path DIRECTORY
+        Append DIRECTORY to the library search path.  This option can be
+        used multiple times.
+
+   -I DIRECTORY
+        Prepend DIRECTORY  to the library  search path.  This option can
+        be used multiple times.
+
+   -L DIRECTORY
+   --library-path DIRECTORY
+        Add DIRECTORY to the FASL search path.  This option can  be used
+        multiple times.
+
+   --build-directory DIRECTORY
+        Select  DIRECTORY as  pathname  under  which compiled  libraries
+        files are temporarily stored  before being installed.  When used
+        multiple times: the last one wins.
+
+   --more-file-extensions
+        Rather   than    searching   only   libraries   with   extension
+        ".vicare.sls"  and ".sls",  search also  for ".vicare.ss",
+        ".ss", ".vicare.scm", ".scm" and the "main" file.
+
+   --prompt STRING
+        Use STRING as prompt for the REPL.  Defaults to "vicare".
+
+   --repl-on-sigint
+        When  this option  is  used an  interprocess  signal handler  is
+	registered at program startup to enter a debugging REPL whenever
+	a SIGINT signal is received.
+
+   --raw-repl
+	Do not create a readline console input port even if the readline
+	interface is available.
+
+   -d
+   -g
+	Turn on debugging mode.
+
+   --option OPTION-NAME
+        Turn on or off a  compiler or expander option.  OPTION-VALUE can
+        be one among:
+
+           debug                        no-debug
+           strict-r6rs                  no-strict-r6rs
+           drop-assertions              no-drop-assertions
+           gc-integrity-checks          no-gc-integrity-checks
+           print-loaded-libraries       no-print-loaded-libraries
+           debug-messages               no-debug-messages
+           enable-automatic-gc          disable-automatic-gc
+           enable-runtime-messages      disable-runtime-messages
+           print-assembly               print-optimizer
+           print-optimiser
+           check-compiler-pass-preconditions
+           no-check-compiler-pass-preconditions
+           expander-descriptive-gensyms
+           expander-descriptive-marks
+           compiler-descriptive-labels
+           compiler-core-type-inference no-compiler-core-type-inference
+           compiler-introduce-primrefs  no-compiler-introduce-primrefs
+           basic-letrec-pass
+           waddell-letrec-pass
+           scc-letrec-pass
+
+   -Wall
+        Enable all the expander and compiler warnings.
+
+   -Wlogic-constants
+   -Wno-logic-constants
+        Enable or disable  raising a &warning exception  when an operand
+	in a logic expression always returns false or non-false.
+
+   -Wnot-returning
+   -Wno-not-returning
+        Enable or disable  raising a &warning exception  when an operand
+	evaluated for its return values is typed as not returning.
+
+   --library-locator NAME
+        Select a  library  locator.  NAME can  be one  among:  run-time,
+        compile-time, source.
+
+   -O0
+        Turn off the source optimizer.
+
+   -O1
+   -O2
+   -O3
+        Turn on various levels of compiler optimisations.
+
+   --optimizer-passes-count COUNT
+        Specify how  many passes to  perform with the  source optimizer.
+        Must be a positive fixnum.  Defaults to 1.
+
+   -v
+   --verbose
+        Enable verbose messages.
+
+   --silent
+        Disable verbose messages.
+   -V
+   --version
+       Print version message on stderr then exit.
+
+   --version-only
+        Print only  the version number  on stdout followed by  a newline
+        then exit.
+
+   --license
+       Print license message on stderr then exit.
+
+   -h
+   --help
+       Print this help message on stderr then exit.
+
+Consult Vicare Scheme User's Guide for more details.
+

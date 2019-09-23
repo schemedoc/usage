@@ -1,0 +1,329 @@
+------------------------------------------------------------------------------
+Bigloo (4.3f)                                                            ,--^, 
+`a practical Scheme compiler'                                      _ ___/ /|/  
+Thu 04 Jul 2019 08:10:18 AM CEST                               ,;'( )__, ) '   
+Inria -- Sophia Antipolis                                     ;;  //   L__.    
+email: bigloo@lists-sop.inria.fr                              '   \    /  '    
+url: http://www-sop.inria.fr/indes/fp/Bigloo                       ^   ^       
+------------------------------------------------------------------------------
+
+usage: bigloo [options] [name.suf]
+
+
+Misc:
+   -                                  Read source code on current input channel
+   -help,--help                       This help message
+   -help2                             The exhaustive help message
+   -help-manual                       The help message formatted for the manual
+   -o FILE                            Name the output FILE
+   --to-stdout                        Write C code on current output channel
+   -c                                 Suppress linking and produce a .o file
+   -y                                 Generate a shared library
+   -suffix SUFFIX                     Recognize suffix as Scheme source
+   -afile FILE                        Name of the access file
+   -access MODULE FILE                Set access between module and file
+   -jfile FILE                        Name of the Jvm package file
+   -jadd MODULE QTYPE                 Set JVM qualifed type name for module
+   -main FUN                          Set the main function
+   -with MODULE                       Import addition module
+   -multiple-inclusion                Enables multiple inclusions of the Bigloo includes
+   -library LIBRARY                   Compile/link with additional Bigloo library
+   -srfi SRFI                         Declares srfi support
+   -dload-sym                         Emit a Bigloo dynamic loading entry point
+   -dload-init-sym NAME               Emit a Bigloo dynamic loading entry point, named NAME
+   -dload-init-gc                     For GC initialization for dynamic code
+   -heapsize SIZE                     Set the initial heap size value (in megabyte)
+
+Configuration and path:
+   -version                           The current release
+   -revision                          The current release (short format)
+   -query                             Dump the current configuration
+   -q                                 Do not load any rc file
+   -eval STRING                       Evaluate STRING before compiling
+   -load FILE                         Load FILE before compiling
+   -I DIR                             Add DIR to the load path
+   -lib-dir DIR                       Set lib-path to DIR
+   -L NAME                            Set additional library path
+   -lib-version VERSION               Set the Bigloo library version
+   -libgc-version VERSION             Set the Bigloo GC library version
+   -libgc GC                          Use the given GC library
+
+Back-end:
+   -native                            Compile module to native object file (via C)
+   -jvm                               Compile module to JVM .class files
+   -saw                               Cut the AST in the saw-mill
+   -no-saw                            Disable saw back-ends
+   -i                                 Interprete module
+
+Dialect:
+   -snow                              Compiles a snow source code
+   -scmpkg,-spi                       Compiles a ScmPkg source code
+   -nil                               Evaluate '() as #f in `if' expression
+   -call/cc                           Enable call/cc function
+   -hygien                            Obsolete (R5rs macros are always supported)
+   -fidentifier-syntax SYNTAX         Identifiers syntax "r5rs" (default) or "bigloo"
+   -fno-reflection                    Deprecated
+   +fno-reflection                    Deprecated
+   -fclass-nil                        Deprecated
+   -fno-class-nil                     Deprecated
+   -farithmetic                       Suppress genericity of arithmetic operators
+   -farithmetic-overflow              Suppress arithmetic overflow checks
+   -fno-arithmetic-overflow           Enable arithmetic overflow checks
+   -fcase-sensitive                   Case sensitive reader (default)
+   -fcase-insensitive                 Case insensitive reader (downcase symbols)
+   -fallow-type-redefinition          allow type redifinition
+   -runtime-code-patching             Enable runtime code patching
+   -no-runtime-code-patching          Disable runtime code patching
+
+Optimization:
+   -Obench                            Benchmarking mode
+   -O[0..6]                           Optimization modes
+   -ftagged-fxop                      Enable tagged fix-ops optimization
+   -fno-tagged-fxop                   Disable tagged fix-ops optimization
+   -fcfa                              Enable CFA
+   -fno-cfa                           Disable CFA
+   -fcfa-arithmetic                   Enable arithmetic spec. (see -farithmetic-overflow)
+   -fno-cfa-arithmetic                Disable arithmetic spec.
+   -fcfa-arithmetic-fixnum            Enable fixnum arithmetic spec.
+   -fno-cfa-arithmetic-fixnum         Disable fixnum arithmetic spec.
+   -fcfa-arithmetic-flonum            Enable flonum arithmetic spec. (enabled from -O2)
+   -fno-cfa-arithmetic-flonum         Disable flonum arithmetic spec. 
+   -fcfa-tracking                     Enable CFA tracking (enabled from -O2)
+   -fno-cfa-tracking                  Disable CFA tracking
+   -fcfa-pair                         Enable CFA pairs approximations
+   -fno-cfa-pair                      Disable CFA pairs approximations
+   -fcfa-unbox-closure-args           Enable CFA unboxed closure args (enabled from -O2)
+   -fno-cfa-unbox-closure-args        Disable CFA unboxed closure args
+   -fno-cfa-local-function            Disable CFA local function tracking
+   -funroll-loop                      Enable loop unrolling (enabled from -O3)
+   -fno-unroll-loop                   Disable loop unrolling
+   -fno-loop-inlining                 Disable loop inlining
+   -floop-inlining                    Enable loop inlining (default)
+   -fno-inlining                      Disable inline optimization
+   -fno-user-inlining                 Disable user inline optimization
+   -fisa                              Inline isa? type predicate
+   -fno-isa                           Inline isa? type predicate
+   -fbeta-reduce                      Enable simple beta reduction (enabled from -O2)
+   -fno-beta-reduce                   Disable simple beta reduction
+   -fdataflow                         Enable dataflow optimizations (enabled from -O)
+   -fno-dataflow                      Disable dataflow optimizations
+   -fdataflow-for-errors              Enable dataflow optimizations for improviing type error messages
+   -fno-dataflow-for-errors           Disable dataflow optimizations for improviing type error messages
+   -fdataflow-types                   Enable type dataflow optimizations (enabled from -O2)
+   -fno-dataflow-types                Disable type dataflow optimizations
+   -finitflow                         Enable init flow
+   -fno-initflow                      Disable init flow
+   -fsync-failsafe                    Enable failsafe synchronize optimization
+   -fno-sync-failsafe                 Disable failsafe synchronize optimization
+   -fO-macro                          Enable Optimization macro (default)
+   -fno-O-macro                       Disable Optimization macro
+   -fglobal-tailc                     Enable global tail-call optimization
+   -fno-global-tailc                  Disable global tail-call optimization
+   -freturn                           Enable set-exit replacement with return
+   -fno-return                        Disable set-exit replacement
+   -freturn-goto                      Enable local set-exit replacement with return
+   -fno-return-goto                   Disable local set-exit replacement
+   -fsaw-realloc                      Enable saw register re-allocation
+   -fsaw-regalloc                     Enable saw register allocation
+   -fno-saw-regalloc                  Disable saw register allocation
+   -fsaw-bbv                          Enable saw basic-blocks versionning
+   -fno-saw-bbv                       Disable saw basic-blocks versionning
+   -fsaw-regalloc-msize SIZE          Set the register allocation body size limit
+   -fsaw-regalloc-fun NAME            Allocate registers on this very function
+   -fno-saw-regalloc-fun NAME         Don't allocate registers on this very function
+   -fsaw-regalloc-onexpr              Allocate registers on expressions
+   -fno-saw-regalloc-onexpr           Don't allocate registers on expressions
+   -fsaw-spill                        Enable saw spill optimization
+
+Safety:
+   -unsafe[atrsvleh]                  Don't check [type/arity/range/struct/version/library/eval/heap]
+   -safe[atrsvle]                     Enforce check [type/arity/range/struct/version/library/eval]
+
+Debug:
+   -glines                            Emit # line directives
+   -gbdb-no-line                      Don't emit # line directives
+   -gbdb[23]                          Compile with bdb debug informations
+   -gself                             Enables self compiler debug options
+   -gmodule                           Debug module initialization
+   -gerror-localization               Localize error calls in the source code
+   -gno-error-localization            Don't localize error calls in the source code
+   -gjvm                              Annote JVM classes for debug
+   -gtrace[12]                        Producing stack traces
+   -g[234]                            Produce Bigloo debug informations
+   -cg                                Compile C files with debug option
+   -export-all                        Eval export-all all routines
+   -export-exports                    Eval export-exports all routines
+   -export-mutable                    Enables Eval redefinition of all "::obj" routines
+
+Profiling:
+   -p[2g]                             Compile for cpu profiling
+   -pmem[level]                       Compile for memory profiling
+   -psync                             Profile synchronize expr (see $exitd-mutex-profile)
+
+Verbosity:
+   -s                                 Be silent and inhibit all warning messages
+   -v[23]                             Be verbose
+   -hello                             Say hello
+   -no-hello                          Dont' say hello even in verbose mode
+   -w                                 Inhibit all warning messages
+   -wslots                            Inhibit overriden slots warning messages
+   -Wvariables                        Enable overriden variable warning messages
+   -Wtypes                            Enable type check warning messages
+   -Wslot                             Enable default slot value warning messages
+   -Wno-slot                          Disable default slot value warning messages
+   -Wall                              Warn about all possible type errors
+   -Werror=type                       Treat type warnings as error
+
+Compilation modes:
+   <-/+>rm                            Don't or force removing .c or .il files
+   -extend NAME                       Extend the compiler
+   -fsharing                          Attempt to share constant data
+   -fno-sharing                       Do not attempt to share constant data
+   -fmco                              Produce an .mco file
+   -fmco-include-path DIR             Add dir to mco C include path
+
+Native specific options:
+   -cc COMPILER                       Specify the C compiler
+   -stdc                              Generate strict ISO C code
+   -copt STRING                       Invoke cc with STRING
+   -cheader STRING                    C header
+   -cfoot STRING                      C foot
+   -rpath PATH                        Add C runtime-path (rpath)
+   -ldopt STRING                      Invoke ld with STRING
+   -ldpostopt STRING                  Invoke ld with STRING (end of arguments)
+   --force-cc-o                       Force the C compiler to use -o instead of mv
+   -ld-relative                       Link using -l notation for libraries (default)
+   -ld-absolute                       Link using absolute path names for libraries
+   -static-bigloo                     Link with the static bigloo library
+   -static-all-bigloo                 Link with static version of all bigloo libraries
+   -ld-libs1                          Add once user libraries when linking
+   -ld-libs2                          Add twice user libraries when linking (default)
+   -lLIBRARY                          Link with host library
+   -auto-link-main                    Enable main generation when needed for linking
+   -no-auto-link-main                 Disable main generation
+   --force-gc-roots                   Register global variables as GC roots
+
+Jvm specific options:
+   -jvm-shell SHELL                   Shell for JVM scripts ("sh", "msdos")
+   -jvm-purify                        Produce byte code verifier compliant JVM code (default)
+   -no-jvm-purify                     Don't care about JVM code verifier
+   -jvm-mainclass CLASS               JVM main class
+   -jvm-classpath PATH                JVM application classpath
+   -jvm-bigloo-classpath P            JVM Bigloo rts classpath
+   -jvm-path-separator SEP            Set the JVM classpath separator
+   -jvm-directory NAME                Directory where to store class files.
+   -jvm-catch-errors                  Catch internal JVM errors
+   -no-jvm-catch-errors               Don't catch internal JVM errors
+   -jvm-jarpath NAME                  Set the JVM classpath for the produced jar file
+   -jvm-cinit-module                  Enable JVM class constructors to initiliaze bigloo modules
+   -no-jvm-cinit-module               Disable JVM class constructors to initiliaze bigloo modules
+   -jvm-char-info                     Generate char info for the debugger (in addition to line info)
+   -no-jvm-char-info                  Do not generate char info for the debugger
+   -fjvm-inlining                     Enable JVM back-end inlining
+   -fjvm-constr-inlining              Enable JVM back-end inlining for constructors
+   -fno-jvm-inlining                  Disable JVM back-end inlining
+   -fno-jvm-constr-inlining           Disable JVM back-end inlining for constructors
+   -fjvm-peephole                     Enable JVM back-end peephole
+   -fno-jvm-peephole                  Disable JVM back-end peephole
+   -fjvm-branch                       Enable JVM back-end branch
+   -fno-jvm-branch                    Disable JVM back-end branch
+   -fjvm-fasteq                       EQ? no longer works on integers (use =FX)
+   -fno-jvm-fasteq                    Disable JVM back-end fasteq transformation
+   -jvm-env VAR                       Make the shell variable visible to GETENV
+   -jvm-jar                           Enable JVM jar files generation
+   -no-jvm-jar                        Disable JVM jar files generation (default)
+   -jvm-java FILE                     Use FILE as JVM
+   -jvm-opt STRING                    JVM invocation option
+
+Traces:
+   -t[2|3|4]                          Generate a trace file (*)
+   +tPASS                             Force pass to be traced
+   -shape[mktTalun]                   Some debugging tools (private)
+
+Compilation stages:
+   -mco                               Stop after .mco production
+   -syntax                            Stop after the syntax stage (see -hygiene)
+   -expand                            Stop after the preprocessing stage
+   -expand-module                     Produce the expanded module clause
+   -ast                               Stop after the ast construction stage
+   -syntax-check                      Stop after checking syntax
+   -bdb-spread-obj                    Stop after the bdb obj spread stage
+   -trace                             Stop after the trace pass
+   -callcc                            Stop after the callcc pass
+   -bivalue                           Stop after the bivaluation stage
+   -inline                            Stop after the inlining stage
+   -inline+                           Stop after the 2nd inlining stage
+   -beta                              Stop after the constant beta reduction stage
+   -fail                              Stop after the failure replacement stage
+   -abound                            Stop after the array bound checking stage
+   -initflow                          Stop after the type initflow stage
+   -narrow                            Stop after the scope narrowing stage
+   -tlift                             Stop after the type lifting stage
+   -dataflow                          Stop after the type dataflow stage
+   -dataflow+                         Stop after the second type dataflow stage
+   -dataflow++                        Stop after the third type dataflow stage
+   -fuse                              Stop after the fuse stage
+   -user                              Stop after the user pass
+   -fxop                              Stop after the fx-ops optimization
+   -coerce                            Stop after the type coercing stage
+   -effect                            Stop after the effect stage
+   -effect+                           Stop after the 2nd effect stage
+   -reduce                            Stop after the reduction opt. stage
+   -reduce+                           Stop after the 2nd reduction opt. stage
+   -reduce-                           Stop after the very first reduction stage
+   -assert                            Stop after the assertions stage
+   -cfa                               Stop after the cfa stage
+   -closure                           Stop after the globalization stage
+   -recovery                          Stop after the type recovery stage
+   -bdb                               Stop after the Bdb code production
+   -cnst                              Stop after the constant allocation
+   -integrate                         Stop after the integration stage
+   -tailc                             Stop after the tailc stage
+   -return                            Stop after the return stage
+   -isa                               Stop after the isa stage
+   -init                              Stop after the initialization construction stage
+   -classgen                          Produce an include file for class accessors
+   -egen                              Produce an include file for effects (requires -saw)
+   -hgen                              Produce a C header file with class definitions
+   -cgen                              Do not C compile and produce a .c file
+   -indent                            Produce an indented .c file
+   -jvmas                             Produce a JVM .jas file
+
+Constant initialization:
+   -init-[lib|read|intern]            Constants initialization mode
+   -init-object-[legacy|staged]       Object system initialization
+
+Bootstrap and setup:
+   -mklib                             Compile a library module
+   -mkaddlib                          Compile an additional library module
+   -mkheap                            Build an heap file
+   -mkaddheap                         Build an additional heap file
+   -mkdistrib                         Compile a main file for a distribution
+   --license                          Display the Bigloo license and exit
+   -LICENSE                           Add the license to the generated C files
+   -heap NAME                         Specify an heap file (or #f to not load heap)
+   -heap-library LIB                  The library the heap belongs to
+   -dump-heap NAME                    Dump the content of a heap
+   -addheap NAME                      Specify an additional heap file
+   -fread-internal                    Read source from binary interned file
+   -fread-internal-src                Read source only from binary interned file
+   -fread-internal-src-file-name NAME Set fake source file name
+   -fread-plain                       Read source from plain text file
+   -target LANG                       DON'T USE, (see -native, -jvm)
+
+Shell Variables:
+   - TMPDIR: temporary directory (default "/tmp")
+   - BIGLOOLIB: libraries' directory
+   - BIGLOOHEAP: the initial heap size in megabytes (4 MB by default)
+   - BIGLOOSTACKDEPTH: the error stack depth printing
+   - BIGLOOLIVEPROCESS: the maximum number of Bigloo live processes
+   - BIGLOOTRACE: list of active traces
+
+Runtime Command file:
+   - ~/.bigloorc
+
+
+------------
+ * : only available in developing mode
+ . : option enabled from -O3 mode
+
