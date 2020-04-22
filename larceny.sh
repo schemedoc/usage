@@ -1,3 +1,3 @@
 #!/bin/sh
 set -eux
-docker run weinholt/larceny larceny --help >larceny.text
+docker run schemers/larceny larceny --help >larceny.text

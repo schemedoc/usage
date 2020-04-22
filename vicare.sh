@@ -1,3 +1,3 @@
 #!/bin/sh
 set -eux
-docker run weinholt/vicare vicare --help >vicare.text
+docker run schemers/vicare vicare --help >vicare.text

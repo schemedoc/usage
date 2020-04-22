@@ -1,3 +1,3 @@
 #!/bin/sh
 set -eux
-docker run weinholt/kawa kawa --help >kawa.text
+docker run schemers/kawa kawa --help >kawa.text
