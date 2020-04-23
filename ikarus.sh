@@ -1,3 +1,3 @@
 #!/bin/sh
 set -eux
-docker run schemers/ikarus:head ikarus -h >ikarus.text 2>&1
+docker run schemers/ikarus:head sh -c 'ikarus -h 2>&1' >ikarus.text

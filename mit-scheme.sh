@@ -1,3 +1,4 @@
 #!/bin/sh
 set -eux
-docker run schemers/mit-scheme scheme --help >mit.text 2>/dev/null
+docker run schemers/mit-scheme sh -c 'scheme --help 2>/dev/null' \
+    >mit-scheme.text
