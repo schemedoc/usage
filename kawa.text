@@ -1,26 +1,26 @@
 Usage: [java kawa.repl | kawa] [options ...]
 
  Generic options:
- --help                        Show help about options
- --author                      Show author information
- --version                     Show version information
+ --help                          Show help about options
+ --author                        Show author information
+ --version                       Show version information
 
  Options
- -e <expr>                     Evaluate expression <expr>
- -c <expr>                     Same as -e, but make sure ~/.kawarc.scm is run first
- -f <filename>                 File to interpret
- -s| --                        Start reading commands interactively from console
- -w                            Launch the interpreter in a GUI window
- --server <port>               Start a server accepting telnet connections on <port>
- --debug-dump-zip              Compiled interactive expressions to a zip archive
- --debug-print-expr            Print generated internal expressions
- --debug-print-final-expr      Print expression after any optimizations
- --debug-error-prints-stack-trace Print stack trace with errors
- --debug-warning-prints-stack-trace Print stack trace with warnings
- --[no-]full-tailcalls         (Don't) use full tail-calls
- -C <filename> ...             Compile named files to Java class files
- --output-format <format>      Use <format> when printing top-level output
- --<language>                  Select source language, one of:
+ -e <expr>                       Evaluate expression <expr>
+ -c <expr>                       Same as -e, but make sure ~/.kawarc.scm is run first
+ -f <filename>                   File to interpret
+ -s| --                          Start reading commands interactively from console
+ -w                              Launch the interpreter in a GUI window
+ --server <port>                 Start a server accepting telnet connections on <port>
+ --debug-dump-zip                Compiled interactive expressions to a zip archive
+ --debug-print-expr              Print generated internal expressions
+ --debug-print-final-expr        Print expression after any optimizations
+ --debug-error-prints-stack-trace  Print stack trace with errors
+ --debug-warning-prints-stack-trace  Print stack trace with warnings
+ --[no-]full-tailcalls           (Don't) use full tail-calls
+ -C <filename> ...               Compile named files to Java class files
+ --output-format <format>        Use <format> when printing top-level output
+ --<language>                    Select source language, one of:
    scheme .scm .sc .sld [default]
    r5rs .scm 
    r6rs .scm 
@@ -34,21 +34,22 @@ Usage: [java kawa.repl | kawa] [options ...]
    xslt xsl .xsl 
    commonlisp common-lisp clisp lisp .lisp .lsp .cl 
  Compilation options, must be specified before -C
- -d <dirname>                  Directory to place .class files in
- -P <prefix>                   Prefix to prepand to class names
- -T <topname>                  name to give to top-level class
- --applet                      Generate an applet
- --servlet                     Generate a servlet
- --module-static               Top-level definitions are by default static
- --full-tailcalls              support full tailcalls
- --main                        generate an application, with a main method
- --warn-as-error               Make all warnings into errors
- --warn-invoke-unknown-method  warn if invoke calls an unknown method (subsumed by warn-unknown-member)
- --warn-undefined-variable     warn if no compiler-visible binding for a variable
- --warn-uninitialized          warn if a uninitialized variable may be used
- --warn-unknown-member         warn if referencing an unknown method or field
- --warn-unreachable            warn if this code can never be executed
- --warn-unused                 warn if a variable is usused or code never executed
- --warn-void-used              warn if void-valued expression is used
+ -d <dirname>                    Directory to place .class files in
+ -P <prefix>                     Prefix to prepand to class names
+ -T <topname>                    name to give to top-level class
+ --applet                        Generate an applet
+ --servlet                       Generate a servlet
+ --module-static                 Top-level definitions are by default static
+ --full-tailcalls                support full tailcalls
+ --main                          generate an application, with a main method
+ --max-errors                    maximum number of errors or warnings to print
+ --warn-as-error                 Make all warnings into errors
+ --warn-invoke-unknown-method    warn if invoke calls an unknown method (subsumed by warn-unknown-member)
+ --warn-undefined-variable       warn if no compiler-visible binding for a variable
+ --warn-uninitialized            warn if a uninitialized variable may be used
+ --warn-unknown-member           warn if referencing an unknown method or field
+ --warn-unreachable              warn if this code can never be executed
+ --warn-unused                   warn if a variable is usused or code never executed
+ --warn-void-used                warn if void-valued expression is used
 
 For more information go to:  http://www.gnu.org/software/kawa/

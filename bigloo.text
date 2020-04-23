@@ -1,7 +1,7 @@
 ------------------------------------------------------------------------------
-Bigloo (4.3f)                                                            ,--^, 
+Bigloo (4.3g)                                                            ,--^, 
 `a practical Scheme compiler'                                      _ ___/ /|/  
-Thu 04 Jul 2019 08:10:18 AM CEST                               ,;'( )__, ) '   
+Thu 27 Feb 2020 07:59:49 AM CET                                ,;'( )__, ) '   
 Inria -- Sophia Antipolis                                     ;;  //   L__.    
 email: bigloo@lists-sop.inria.fr                              '   \    /  '    
 url: http://www-sop.inria.fr/indes/fp/Bigloo                       ^   ^       
@@ -72,8 +72,6 @@ Dialect:
    -fcase-sensitive                   Case sensitive reader (default)
    -fcase-insensitive                 Case insensitive reader (downcase symbols)
    -fallow-type-redefinition          allow type redifinition
-   -runtime-code-patching             Enable runtime code patching
-   -no-runtime-code-patching          Disable runtime code patching
 
 Optimization:
    -Obench                            Benchmarking mode
@@ -148,7 +146,7 @@ Debug:
    -gerror-localization               Localize error calls in the source code
    -gno-error-localization            Don't localize error calls in the source code
    -gjvm                              Annote JVM classes for debug
-   -gtrace[12]                        Producing stack traces
+   -gtrace[12all]                     Instrument for stack tracing
    -g[234]                            Produce Bigloo debug informations
    -cg                                Compile C files with debug option
    -export-all                        Eval export-all all routines

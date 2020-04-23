@@ -1,3 +1,24 @@
+Unable to find image 'schemers/ikarus:head' locally
+head: Pulling from schemers/ikarus
+c499e6d256d6: Pulling fs layer
+f7d2ad729ad0: Pulling fs layer
+ac3f06a34404: Pulling fs layer
+fbb77d97872e: Pulling fs layer
+fbb77d97872e: Waiting
+f7d2ad729ad0: Verifying Checksum
+f7d2ad729ad0: Download complete
+ac3f06a34404: Verifying Checksum
+ac3f06a34404: Download complete
+fbb77d97872e: Verifying Checksum
+fbb77d97872e: Download complete
+c499e6d256d6: Verifying Checksum
+c499e6d256d6: Download complete
+c499e6d256d6: Pull complete
+f7d2ad729ad0: Pull complete
+ac3f06a34404: Pull complete
+fbb77d97872e: Pull complete
+Digest: sha256:216a98d3957fb0a82abe5ff12116373da7798029ddcec2fc22ec5ce10b6638bb
+Status: Downloaded newer image for schemers/ikarus:head
 
 Options for running ikarus scheme:
 

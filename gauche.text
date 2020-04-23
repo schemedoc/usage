@@ -1,7 +1,28 @@
-gosh: invalid option -- 'h'
+Unable to find image 'schemers/gauche:head' locally
+head: Pulling from schemers/gauche
+c499e6d256d6: Pulling fs layer
+dbcee5a87c26: Pulling fs layer
+c9c9caeac563: Pulling fs layer
+11d0bc094f11: Pulling fs layer
+11d0bc094f11: Waiting
+c9c9caeac563: Verifying Checksum
+c9c9caeac563: Download complete
+11d0bc094f11: Verifying Checksum
+11d0bc094f11: Download complete
+c499e6d256d6: Verifying Checksum
+c499e6d256d6: Download complete
+dbcee5a87c26: Verifying Checksum
+dbcee5a87c26: Download complete
+c499e6d256d6: Pull complete
+dbcee5a87c26: Pull complete
+c9c9caeac563: Pull complete
+11d0bc094f11: Pull complete
+Digest: sha256:50c994ca442ecf53e6438fc34aea0d1a9e096084e86f2385acad41c1ee891be4
+Status: Downloaded newer image for schemers/gauche:head
 Usage: gosh [-biqV][-I<path>][-A<path>][-u<module>][-m<module>][-l<file>][-L<file>][-e<expr>][-E<expr>][-p<type>][-F<feature>][-r<standard>][-f<flag>][--] [file]
 Options:
   -V       Prints version and exits.
+  -h       Show this message to stdout.
   -b       Batch mode.  Doesn't print prompts.  Supersedes -i.
   -i       Interactive mode.  Forces to print prompts.
   -q       Doesn't read the default initialization file.
@@ -37,6 +58,8 @@ Options:
       case-fold       uses case-insensitive reader (as in R5RS)
       load-verbose    report while loading files
       include-verbose report while including files
+      safe-string-cursors
+                      performs extra validation for use of string cursors
       warn-legacy-syntax
                       print warning when legacy Gauche syntax is encountered
       no-inline       don't inline procedures & constants (combined
@@ -59,6 +82,8 @@ Environment variables:
       Value must be an integer.  If set, it overrides the number of
       available processors on the system, returned from
       `sys-available-processors'.
+  GAUCHE_CHECK_UNDEFINED_TEST
+      Warn if #<undef> is used in the test expression of branch.
   GAUCHE_DYNLOAD_PATH
       Directories separated by colon (on Unix) or semilcolon (on Windows)
       to search dynamically loadable files.
@@ -73,12 +98,20 @@ Environment variables:
       If set, keywords are of their own disjoint type, rather than symbols.
       This is old default behavior, in 0.9.7 and before.  See ``Keyword and
       symbol integration'' section of the manual for the details.
+  GAUCHE_LEGACY_DEFINE
+      Keep the toplevel `define' behavior the same as 0.9.8 and before.
+      It allows certain legacy programs that aren't valid R7RS.  See
+      ``Into the Scheme-Verse'' section of the manual for the details.
   GAUCHE_LOAD_PATH
       Directories separated by colon (on Unix) or semilcolon (on Windows)
       to search scheme files to load.
+  GAUCHE_MUTABLE_LITERALS
+      Make quoted pairs and lists mutable.  Only to be used to run legacy
+      code that accidentally mutates literal pairs (you shouldn't do it)
   GAUCHE_QUASIRENAME_MODE
       Customize quasirename compatibility mode.  See 'Explicit-renaming
-      macro transformer' section of the manual for the details.  GAUCHE_READ_EDIT
+      macro transformer' section of the manual for the details.
+  GAUCHE_READ_EDIT
       If set, and the terminal is capable, turn on the experimental
       line-editing feature in REPL.
   GAUCHE_REPL_NO_PPRINT
