@@ -6,5 +6,5 @@ for scheme in bigloo chezscheme chibi chicken cyclone gauche guile ikarus ironsc
     echo "===== $scheme ====="
     ./"$scheme.sh"
     docker system prune -f
-    docker rmi "schemers/$scheme" || true
+    docker rmi "schemers/$scheme" "schemers/$scheme:head" || true
 done
