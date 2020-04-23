@@ -1,24 +1,3 @@
-Unable to find image 'schemers/gauche:head' locally
-head: Pulling from schemers/gauche
-c499e6d256d6: Pulling fs layer
-dbcee5a87c26: Pulling fs layer
-c9c9caeac563: Pulling fs layer
-11d0bc094f11: Pulling fs layer
-11d0bc094f11: Waiting
-c9c9caeac563: Verifying Checksum
-c9c9caeac563: Download complete
-11d0bc094f11: Verifying Checksum
-11d0bc094f11: Download complete
-c499e6d256d6: Verifying Checksum
-c499e6d256d6: Download complete
-dbcee5a87c26: Verifying Checksum
-dbcee5a87c26: Download complete
-c499e6d256d6: Pull complete
-dbcee5a87c26: Pull complete
-c9c9caeac563: Pull complete
-11d0bc094f11: Pull complete
-Digest: sha256:50c994ca442ecf53e6438fc34aea0d1a9e096084e86f2385acad41c1ee891be4
-Status: Downloaded newer image for schemers/gauche:head
 Usage: gosh [-biqV][-I<path>][-A<path>][-u<module>][-m<module>][-l<file>][-L<file>][-e<expr>][-E<expr>][-p<type>][-F<feature>][-r<standard>][-f<flag>][--] [file]
 Options:
   -V       Prints version and exits.

@@ -1,29 +1,3 @@
-Unable to find image 'schemers/chezscheme:latest' locally
-latest: Pulling from schemers/chezscheme
-c499e6d256d6: Pulling fs layer
-a76495029a7a: Pulling fs layer
-721ae3d67d13: Pulling fs layer
-98345fa86a36: Pulling fs layer
-6b13736b2317: Pulling fs layer
-98345fa86a36: Waiting
-6b13736b2317: Waiting
-721ae3d67d13: Verifying Checksum
-721ae3d67d13: Download complete
-a76495029a7a: Verifying Checksum
-a76495029a7a: Download complete
-c499e6d256d6: Verifying Checksum
-c499e6d256d6: Download complete
-98345fa86a36: Verifying Checksum
-98345fa86a36: Download complete
-6b13736b2317: Verifying Checksum
-6b13736b2317: Download complete
-c499e6d256d6: Pull complete
-a76495029a7a: Pull complete
-721ae3d67d13: Pull complete
-98345fa86a36: Pull complete
-6b13736b2317: Pull complete
-Digest: sha256:c77eaead1224b5b8b72dbb3aec06316c7b742d9e1613cbe04b696ae54f7687e1
-Status: Downloaded newer image for schemers/chezscheme:latest
 usage: scheme [options and files]
 options:
   -q, --quiet                             suppress greeting and prompt
