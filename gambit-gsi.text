@@ -1,0 +1,32 @@
+usage: gsi [options] [module-or-file...]
+
+This is the Gambit Scheme interpreter.
+
+Interactive mode (read-eval-print loop)
+    gsi [global options]
+
+Batch mode
+    gsi [global options] module-or-file...
+    Where each module-or-file is one of:
+      .                            Adds CWD to module search order
+      directory/                   Adds directory to module search order
+      foo, foo/bar, ...            Run module or file on local file system
+      github.com/gambit/hello      Run module hosted on public Git repository
+      github.com/gambit/hello@1.0  Run specific version of module
+      file.sld or
+      file.scm         Run Scheme script (when the script starts with '#!' or
+                       '@;' it receives any remaining command line arguments)
+      file.oN          Run dynamically loadable object file produced by gsc
+      -e 'expression'  Evaluate the given Scheme expression at this point
+      -                Drop into a REPL at this point (continue with ,c)
+
+Module management
+    gsi [global options] -install   github.com/gambit/hello
+    gsi [global options] -uninstall github.com/gambit/hello
+    gsi [global options] -update    github.com/gambit/hello
+
+Global options
+    -:opt,...  Runtime system options (try '-:help' for details)
+    -f         Do not process '.gambini' initialization files
+    -v         Show version information
+    -h, -help  Show this help

@@ -1,0 +1,8 @@
+Invalid argument: --help
+Usage: /usr/local/lib/scheme48-1.9.2/scheme48vm [options] [-a arguments]
+Options: -h <heap-size>    Maximum heap size in words (default 4000000).
+                           A heap size of 0 means the heap can grow
+                           unboundedly. This is dangerous because it can
+                           cause your system to run out of memory.
+	 -s <stack-size>   Stack buffer size in words.
+         -i <file>         Load image from file (default "scheme48.image")

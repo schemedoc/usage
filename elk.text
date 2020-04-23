@@ -1,0 +1,13 @@
+Usage: elk [options] [arguments]
+Options:
+   [-l filename]   Load file instead of standard toplevel
+   [-l -]          Load from standard input
+   [-h heapsize]   Heap size in KBytes
+   [-p loadpath]   Initialize load-path (colon-list of directories)
+   [-debug]        Enable GC-debugging
+   [-g]            Case-sensitive symbols
+   [-i]            Case-insensitive symbols
+   [-v type]       Be verbose.  "type" controls what to print:
+                      load   linker command when loading object file
+                      init   names of extension [f]init functions when called
+   [--]            End options and begin arguments

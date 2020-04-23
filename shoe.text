@@ -1,0 +1,9 @@
+Usage: shoe [options] [script]
+
+Options:
+  -d, --dump <file>     Dumps the program as a C file.
+  -e, --execute <cmd>   Run the given command instead of the script.
+  -h, --help            Display this help and exit.
+  -v, --version         Display version and exit.
+
+When no script is given, Shoe will start in interactive mode.

@@ -1,0 +1,16 @@
+Usage: ol [args] [file] ...
+  -h | --help
+  -a | --about
+  -v | --version
+  -e | --eval <arg>, evaluate given expression and print result
+  -t | --test <arg>, evaluate given expression exit with 0 unless the result is #false
+  -q | --quiet, be quiet (default in non-interactive mode)
+  -r | --run <arg>, run the last value of the given foo.scm with given arguments (terminal)
+  -i | --include <arg>, extra directory to load libraries from (can be several)
+  -l | --load <arg>, resume execution of a saved program state saved with suspend
+  -o | --output <arg>, where to put compiler output (default auto)
+  -x | --output-format <arg>, output format when compiling (default auto)
+  -O | --optimize <arg>, optimization level in C-compilation (0-2)
+  -C | --runtime <arg>, use a custom runtime in C compilation
+  -m | --mode <arg>, output wrapping: program, library, plain [program]
+       --no-readline, disable builtin line editor

@@ -1,0 +1,23 @@
+Warm booting .......
+Oaklisp level options.
+
+        --help             Print this message & exit.
+
+        --eval expr        Evaluate Oaklisp expression, which is one arg so
+                           be sure to quote for shell.
+
+        --load file        Load a file.
+
+        --compile file     Compile file.oak yielding file.oa
+
+        --locale x         Switch to locale x, eg system-locale (default),
+                           compiler-locale, scheme-locale (for RnRS
+                           compatibility).
+
+        --pthreads         Number of pthreads to allocate.
+
+        --exit             Exit upon processing this option.
+
+Example:
+    oaklisp --trace-gc 2 -- --locale scheme-locale --compile myfile --exit
+Oaklisp stopped itself.

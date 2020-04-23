@@ -1,0 +1,24 @@
+
+Scheme 9 from Empty Space by Nils M Holm, 2018-12-05
+This program is in the public domain
+Extensions: sys-unix net-unix curses csv
+
+Usage: s9 [-i file | -] [-hv?] [-gqu] [-e expr] [-d file]
+          [-k cells] [-l file] [-n nodes] [-r expr]
+          [-- argument ... | [-f] file argument ...]
+
+-h         help (also -v, -?)
+-d file    dump image to file, then exit
+-g         print garbage collector messages (-gg = more)
+-e expr    evaluate expression, print value, no REPL
+-i file    load image from file (default: s9.image)
+-i -       compile initial image from sources (s9.scm)
+-k n[m]    set vector limit to nK (or nM) cells (14013K)
+-l file    load program from file
+-n n[m]    set node limit to nK (or nM) nodes (14013K)
+-q         quiet: no banner, no prompt, exit on errors
+-r expr    like -e, but don't print value (run for effect)
+-u         use unlimited node and vector memory
+file args  run program file with arguments, then exit
+-- args    bind remaining arguments to (command-line)
+

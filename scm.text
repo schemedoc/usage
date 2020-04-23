@@ -1,0 +1,6 @@
+This is SCM, a Scheme interpreter.
+Usage: scm [-a kbytes] [-muvqibs] [--version] [--help]
+       [--no-symbol-case-fold] [-no-init-file] [--no-init-file] [-p number] [-h feature]
+       [-r feature] [-d filename] [-f filename] [-l filename] [-c string]
+       [-e string] [-o filename] [-- | -s | -] [file] [args...]
+Latest info: http://people.csail.mit.edu/jaffer/SCM

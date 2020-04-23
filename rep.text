@@ -1,0 +1,21 @@
+usage: rep [OPTIONS...]
+
+where OPTIONS are any of:
+
+    FILE		load the Lisp file FILE (implies --batch)
+
+    --batch		batch mode: process options and exit
+    --interp		interpreted mode: don't load compiled Lisp files
+    --debug		start in the debugger (implies --interp)
+
+    --call FUNCTION	call the Lisp function FUNCTION
+    --f FUNCTION
+
+    --load FILE		load the Lisp file FILE
+    -l FILE
+
+    --check		run self tests and exit
+
+    --version		print version details
+    --no-rc		don't load rc or site-init files
+    --quit, -q		terminate the interpreter process

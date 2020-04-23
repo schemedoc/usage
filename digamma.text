@@ -1,0 +1,20 @@
+usage: digamma [options] [--] [file] [arguments]
+options:
+  --r7rs (-7)            conforms r7rs syntax and semantics
+  --r6rs (-6)            conforms r6rs syntax and semantics
+  --top-level-program    runs the top-level program
+  --mute (-m)            suppresses greeting
+  --quiet (-q)           suppresses greeting, repl prompt, and repl output
+  --verbose (-v)         prints load and compile activities
+  --warning (-w)         prints warnings
+  --interactive (-i)     enters repl after running the script file
+  --sitelib=path         adds sitelib path (DIGAMMA_SITELIB)
+  --loadpath=path        adds load search path (DIGAMMA_LOADPATH)
+  --acc=dir              sets a auto-compile-cache directory (DIGAMMA_ACC)
+  --heap-limit=mbytes    sets a total heap limit in MBytes
+  --dump-condition       default exception handler dumps condition
+  --disable-acc          disables auto-compile-cache
+  --clean-acc            cleans auto-compile-cache
+  --version              prints version and exit
+  --help                 prints help and exit
+  --                     indicates no more option to proceed

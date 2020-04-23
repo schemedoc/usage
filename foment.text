@@ -1,0 +1,109 @@
+Usage:
+    foment <option> ... [--] <program> <program-arg> ...
+
+    -A <directory>
+    --append <directory>
+        Append the specified directory to the list of directories to search
+        when loading libraries.
+
+    -I <directory>
+    --prepend <directory>
+        Prepend the specified directory to the list of directories to search
+        when loading libraries.
+
+    -X <extension>
+    --extension <extension>
+        Add the specified extension to the list of filename extensions to try
+        when loading libraries.
+
+    --verbose
+        Turn on verbose logging.
+
+    --random-seed <seed>
+        Use the specified seed for the random number generator; otherwise the
+        current time is used.
+
+    -h
+    -?
+    --help
+    --usage
+        Prints out the usage information for foment.
+
+    --version
+        Prints out the current version number of foment.
+
+    --no-collector
+        No garbage collector.
+
+    --mark-sweep
+        Use the mark and sweep garbage collector.
+
+    --generational
+        Use the generational + mark and sweep garbage collector.
+
+    --check-heap
+        Check the heap before and after garbage collection.
+
+    --maximum-stack-size <number-of-bytes>
+        Use the specified number-of-bytes as the maximum stack size for each
+        thread.
+
+    --maximum-babies-size <number-of-bytes>
+        Use the specified number-of-bytes as the maximum size of generation
+        zero for each thread.
+
+    --maximum-kids-size <number-of-bytes>
+        Use the specified number-of-bytes as the maximum size of generation
+        one; this space is shared by all threads.
+
+    --maximum-adults-size <number-of-bytes>
+        Use the specified number-of-bytes as the maximum size of the mark and
+        sweep generation.
+
+    --maximum-generational-baby <number-of-bytes>
+        When using the generational collector, new objects larger than the
+        specified number-of-bytes are allocated in the mark and sweep
+        generation rather than generation zero.
+
+    --trigger-bytes <number-of-bytes>
+        Trigger garbage collection after at least the specified
+        number-of-bytes have been allocated since the last collection
+
+    --trigger-objects <number-of-objects>
+        Trigger garbage collection after at least the specified
+        number-of-objects have been allocated since the last collection
+
+    --partial-per-full <number>
+        Perform the specified number of partial garbage collections
+        before performing a full collection.
+
+    -b
+    --batch
+        Run foment in batch mode: standard input is treated as a program.
+
+    -i
+    --interactive
+    --repl
+        Run foment in an interactive session (repl).
+
+    -l <filename>
+    --load <filename>
+        Load the specified filename using the scheme procedure, load.
+
+    -p <expression>
+    --print <expression>
+        Evaluate and print the results of the specified expression.
+
+    -e <expression>
+    --eval <expression>
+    --evaluate <expression>
+        Evaluate the specified expression.
+
+Notes:
+    Program mode is assumed unless there is no <program> or at
+    least one of -i (--interactive, --repl), -p (--print), or -e
+    (--eval, --evaluate) are specified.
+
+    Use -- to indicate the end of options; this is unnecessary in
+    program mode unless <program> starts with - or --.
+

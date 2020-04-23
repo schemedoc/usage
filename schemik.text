@@ -1,0 +1,11 @@
+Implicitly parallel Scheme
+Usage: schemik OPTIONS
+  -t N, --threads N	evalute expressions using N threads [default: 4]
+  -p STRATEGY		scheduler strategy (forward/backward) [default: backward]
+  -q			ignore base library
+  -s FILE		evaluate scheme code in FILE and exit
+  -l FILE		evaluate scheme code in FILE and start REPL
+  -c EXPR		evaluate expression and exit
+  -e EXPR		evaluate expression and start REPL
+  -h, --help		display this help and exit
+  -V, --version		display informations about current configuration

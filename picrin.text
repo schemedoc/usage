@@ -1,0 +1,8 @@
+picrin scheme
+
+Usage: picrin [options] [file]
+
+Options:
+  -e [program]		run one liner script
+  -l [file]		load the file then enter repl
+  -h or --help		show this help

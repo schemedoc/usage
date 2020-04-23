@@ -1,0 +1,23 @@
+Usage: ksi OPTION ...
+
+Evaluate Scheme code, interactively or from script.
+
+Without arguments the program loads 'Boot.scm' (from KSi library location)
+and run interactively.
+
+Options:
+
+  -b [FILE]      load FILE, and run interactively.
+                 Should be first argument in command line (otherwise ignored).
+                 Other arguments (if any) ignored but can be parsed in FILE.
+
+  -c EXPRESSION  eval Scheme EXPRESION, and exit
+
+  -h, --help     display this help and exit
+
+  -v, --version  display version information and exit
+
+  --             stop scanning arguments and run interactively
+
+Send bug reports to <ksion@users.sourceforge.net>
+

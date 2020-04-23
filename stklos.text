@@ -1,0 +1,19 @@
+stklos (version 1.31)
+Usage: stklos [option ...] [--] [arg ... ]
+Possible options:
+   -l file, --load=file        load 'file' before going interactive
+   -f file, --file=file        use 'file' as program
+   -e sexpr, --execute=sexpr   evaluate the given sexpr and exit
+   -b file, --boot-file=file   use 'file' to boot the system
+   -D dir, --conf-dir=dir      change configuration dir (default: ~/.stklos)
+   -q, --no-init-file          quiet: do not load the user init file
+   -i, --interactive           interactive mode
+   -n, --no-line-editor        don't use line editor
+   -d, --debug                 add informations to ease debugging
+   -s, --stack-size=n          use a stack of size n (default 100000)
+   -c, --case-sensitive        be case sensitive by default
+       --case-insensitive      be case incensitive by default
+   -u, --utf8-encoding=yes|no  use/don't use UTF-8 encoding (instead of default)
+   -v, --version               print program version and exit
+   -h, --help                  print this help and exit
+All the arguments given after options are passed to the Scheme program.

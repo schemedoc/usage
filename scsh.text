@@ -1,0 +1,33 @@
+Unknown switch --help 
+Usage: scsh [meta-arg] [switch ..] [end-option arg ...]
+
+meta-arg: \ <script-file-name>
+
+switch: -e <entry-point>  Specify top-level entry point.
+  -o <structure>    Open structure in current package.
+  -m <package>    Switch to package.
+  -n <new-package>  Switch to new package.
+
+
+  -lm <module-file-name>  Load module into config package.
+  -le <exec-file-name>    Load file into exec package.
+  -l  <file-name>   Load file into current package.
+
+  -ll <module-file-name>  As in -lm, but search the library path list.
+  -lel <exec-file-name>   As in -le, but search the library path list.
+  +lp  <dir>    Add <dir> to front of library path list.
+  lp+  <dir>    Add <dir> to end of library path list.
+  +lpe <dir>    +lp, with env var and ~user expansion.
+  lpe+ <dir>    lp+, with env var and ~user expansion.
+  +lpsd     Add script-file's dir to front of path list.
+  lpsd+     Add script-file's dir to end of path list.
+  -lp-clear   Clear library path list to ().
+  -lp-default   Reset library path list to system default.
+
+  -ds       Do script.
+  -dm     Do script module.
+  -de     Do script exec.
+
+end-option: -s <script> Specify script.
+    -c <exp>  Evaluate expression.
+    --    Interactive session.

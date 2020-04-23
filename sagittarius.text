@@ -1,0 +1,59 @@
+Usage: sagittarius [-hvicdtn][-L<path>][-D<path>][-f<flag>][-I<library>][-E<flags>][-p<file>][--] [file]
+options:
+  -v,--version                   Prints version and exits.
+  -h,--help                      Prints this usage and exits.
+  -i,--interactive               Interactive mode. Forces to print prompts.
+  -f<flag>,--flag=<flag>         Optimization flag.
+      no-inline         Not use inline ASM.
+      no-inline-local   Not inline local call.
+      no-lambda-lifting Not do lambda lifting.
+      no-library-inline Not do library inlining.
+      no-const-fold     Not do constant folding.
+      no-optimization   No optimisation.
+      no-unbound        Raise error for unbound variables.
+  -I<library>,--import=<library> Import specified library to user library
+  -e<expr>,--expr=<expr> Eval given expression before loading script
+                                 before sash will be executed.
+  -r,--standard                  Execute Sagittarius on specified standard.
+      6                 Executes in strict R6RS mode.
+      7                 Executes in strict R7RS mode.
+                        On this mode, only (scheme base) is imported on REPL.
+  -L<path>,--loadpath=<path>     Adds <path> to the head of the load path list.
+  -A<path>,--append-loadpath=<path>  Adds <path> to the last of the load path
+                                     list.
+  -D<path>,--dynloadpath=<path>  Adds <path> to the head of the dynamic load
+                                 path list
+  -Y<path>,--append-dynloadpath=<path>  Adds <path> to the last of the dynamic
+                                        load path list
+  -S<suffix>,--loadsuffix=<suffix>  Adds <suffix> to the head of the suffix list
+  -F<suffix>,--append-loadsuffix=<suffix>  Adds <suffix> to the last of the
+                                           suffix list
+  -c,--clean-cache               Cleans compiled cache.
+  -d,--disable-cache             Disable compiled cache.
+  -E,--debug-exec=<flags>        Sets <flags> for VM debugging.
+    	warn        Shows warning level log.
+    	info        Shows warning level + loading files.
+    	debug       Shows info level + calling function names.
+    	trace       Shows info debug + stack frames.
+  -p<file>,--logport=<file>      Sets <file> as log port. This port will be
+                                 used for above options.
+  -P<time>,--profile<time>       Run with profiler.
+     time        Sort by time
+     count       Sort by count
+  -t,--toplevel-only             Imports only toplevel syntax.
+     This option only imports 'import', 'library' and 'define-library'
+     to interaction environment by default.
+  -n,--no-main                   Do not call main procedure.
+  -G,--gc-warning                Show GC warning on stderr.
+
+environment variables:
+  SAGITTARIUS_LOADPATH
+    Adds library load path by using environment variable, with ':'
+    (use ';' for Windows) separated paths.
+  SAGITTARIUS_DYN_LOADPATH
+    Adds module load path by using environment variable, with ':'
+    (use ';' for Windows) separated paths.
+
+bug report:
+  https://bitbucket.org/ktakashi/sagittarius-scheme/issues
+  ktakashi@ymail.com
