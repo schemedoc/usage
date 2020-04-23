@@ -1,4 +1,4 @@
 #!/bin/sh
 set -eux
-docker run schemers/sagittarius:head sh -c 'sagittarius -h 2>&1' \
+docker run schemers/sagittarius:head sh -c 'sagittarius --help 2>&1 || true' \
     >sagittarius.text
