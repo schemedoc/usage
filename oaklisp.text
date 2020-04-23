@@ -1,31 +1,23 @@
-Oaklisp 1.3.7
+Warm booting .......
+Oaklisp level options.
 
-Usage: oaklisp emulator-options -- oaklisp-options
+        --help             Print this message & exit.
 
-    emulator options:
+        --eval expr        Evaluate Oaklisp expression, which is one arg so
+                           be sure to quote for shell.
 
-	--help               print this message and terminate
-	--version            print version number and terminate
+        --load file        Load a file.
 
-	--world file         world to load, default=
-	                      /usr/local/lib/oaklisp/oakworld.bin
-	--dump file          dump world to file upon exit
-	--d file             synonym for --dump
-	--dump-base b        10 or 16=ascii, 2=binary; default=2
-	--predump-gc b       0=no, 1=yes; default=1
+        --compile file     Compile file.oak yielding file.oa
 
-	--size-heap n        n is in kilo-refs, default 128
-	--size-val-stk n     value stack buffer, n is in refs
-	--size-cxt-stk n     context stack buffer, n is in refs
-	--size-seg-max n     maximum flushed segment len, n is in refs
+        --locale x         Switch to locale x, eg system-locale (default),
+                           compiler-locale, scheme-locale (for RnRS
+                           compatibility).
 
-	--trace-gc v         0=quiet, 3=very detailed; default=0
-	--verbose-gc v       synonym for --trace-gc
-	--trace-traps
-	--batch              disable trapping of SIGINT
-	--trace-files        trace filesystem operations
+        --pthreads         Number of pthreads to allocate.
 
-    oaklisp options:
+        --exit             Exit upon processing this option.
 
-	Try "man oaklisp" or run "oaklisp -- --help"
-
+Example:
+    oaklisp --trace-gc 2 -- --locale scheme-locale --compile myfile --exit
+Oaklisp stopped itself.
