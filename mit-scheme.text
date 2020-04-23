@@ -1,3 +1,80 @@
+Usage: mit-scheme --OPTION ARG ... --OPTION ARG ...
+
+This machine accepts the following command-line options.  The options
+may appear in any order, but they must all appear before any options
+for the band.
+
+--library PATH
+  Sets the library search path to PATH.  This is a colon-separated
+  list of directories that is searched to find various library files,
+  such as bands.  If this option is not given, the value of the
+  environment variable MITSCHEME_LIBRARY_PATH is used; if that isn't
+  defined, "/usr/local/lib/mit-scheme-x86-64" is used.
+
+--band FILENAME
+  Specifies the initial band to be loaded.  Searches for FILENAME in
+  the working directory and the library directories, returning the
+  full pathname of the first readable file of that name.  If this
+  option isn't given, the filename is the value of the environment
+  variable MITSCHEME_BAND, or if that isn't defined, "all.com"; in
+  these cases the library directories are searched, but not the
+  working directory.
+
+--fasl FILENAME
+  Specifies that a cold load should be performed, using FILENAME as
+  the initial file to be loaded.  If this option isn't given, a normal
+  load is performed instead.  This option may not be used together
+  with the "--band" option.
+
+--heap BLOCKS
+  Specifies the size of the heap in 1024-word blocks.  Overrides any
+  default.
+
+--constant BLOCKS
+  Specifies the size of constant space in 1024-word blocks.  Overrides
+  any default.
+
+--stack BLOCKS
+  Specifies the size of the stack in 1024-word blocks.  Overrides any
+  default.
+
+--option-summary
+  Causes Scheme to write option values to standard error.
+
+--help
+  Causes Scheme to report the available command line options.
+
+--version
+  Causes Scheme to report versions and copyrights, then exit.
+
+--batch-mode, --quiet, --silent
+  Suppresses the startup report of versions and copyrights, and the
+  valediction.
+
+--emacs
+  Specifies that Scheme is running as a subprocess of GNU Emacs.
+  This option is automatically supplied by GNU Emacs, and should not
+  be given under other circumstances.
+
+--interactive
+  If this option isn't specified, and Scheme's standard I/O is not a
+  terminal, Scheme will detach itself from its controlling terminal.
+  This will prevent it from getting signals sent to the process group
+  of that terminal.  If this option is specified, Scheme will not
+  detach itself from the controlling terminal.
+
+--nocore
+  Specifies that Scheme should not generate a core dump under any
+  circumstances.
+
+--prepend-library DIRNAME
+  Adds DIRNAME to the front of the library search path.  This option
+  takes one value and can be specified once.
+
+Please report bugs to bug-mit-scheme@gnu.org.
+
+Additional options may be supported by the band (and described below).
+
 Copyright (C) 2019 Massachusetts Institute of Technology
 This is free software; see the source for copying conditions. There is NO
 warranty; not even for MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
@@ -38,4 +115,4 @@ ADDITIONAL OPTIONS supported by this band:
   Under Unix, this is triggered by SIGUSR1 and SIGPWR, and also, if
   Scheme is not running under Emacs, SIGHUP.
 
-Ceterum censeo Carthaginem esse delendam.
+..#]^@^@^@ NO CARRIER
