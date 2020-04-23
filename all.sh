@@ -4,7 +4,7 @@ cd "$(dirname "$0")"
 echo "Entering directory '$PWD'"
 for scheme in \
     bigloo chezscheme chibi chicken cyclone digamma elk foment \
-    gambit gauche guile ikarus ironscheme kawa ksi larceny \
+    gambit gauche guile ikarus kawa ksi larceny \
     mit-scheme mosh oaklisp owl picrin racket rep \
     s9fes sagittarius scheme48 schemik scm scsh shoe stklos \
     vicare; do
