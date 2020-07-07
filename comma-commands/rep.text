@@ -1,0 +1,21 @@
+user> ,help
+
+Either enter lisp forms to be evaluated, and their result printed, or
+enter a meta-command prefixed by a `,' character. Names of meta-
+commands may be abbreviated to their unique leading characters.
+
+  ,access STRUCT ...             ,in STRUCT [FORM ...]
+  ,accessible                    ,interfaces
+  ,apropos "REGEXP"              ,load STRUCT ...
+  ,bindings                      ,load-file "FILENAME" ...
+  ,check [STRUCT]                ,locate SYMBOL
+  ,collect                       ,new STRUCT
+  ,compile [STRUCT ...]          ,open STRUCT ...
+  ,compile-file "FILENAME" ...   ,profile FORM
+  ,compile-proc PROCEDURE ...    ,quit
+  ,describe SYMBOL               ,reload STRUCT ...
+  ,disassemble FORM              ,step FORM
+  ,expand FORM                   ,structures
+  ,exports                       ,time FORM
+  ,help                          ,unload STRUCT ...
+  ,imports                       ,whereis SYMBOL

@@ -1,0 +1,5 @@
+stklos> ,help
+Available Commands:
+- ,backtrace ,bt   Show the stack when last error occurred
+- ,quit ,q         Exit STklos
+- ,help ,? ,h      This help

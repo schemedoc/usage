@@ -1,0 +1,34 @@
+> ,help
+; General commands:
+;   help (h ?): display available commands
+;   exit (quit ex): exit racket
+;   cd: change the current directory
+;   pwd: display the current directory
+;   shell (sh ls cp mv rm md rd git svn): run a shell command
+;   edit (e): edit files in your $EDITOR
+;   drracket (dr drr): edit files in DrRacket
+; Binding information:
+;   apropos (ap): look for a binding
+;   describe (desc id): describe a (bound) identifier
+;   doc: browse the racket documentation
+; Requiring and loading:
+;   require (req r): require a module
+;   require-reloadable (reqr rr): require a module, make it reloadable
+;   enter (en): require a module and go into its namespace
+;   toplevel (top): go back to the toplevel
+;   load (ld): load a file
+; Debugging:
+;   backtrace (bt): see a backtrace of the last exception
+;   time: time an expression
+;   trace (tr): trace a function
+;   untrace (untr): untrace a function
+;   errortrace (errt inst): errortrace instrumentation control
+;   profile (prof): profiler control
+;   execution-counts: execution counts
+;   coverage (cover): coverage information via a sandbox
+; Miscellaneous:
+;   switch-namespace (switch): switch to a different repl namespace
+;   syntax (stx st): set syntax object to inspect, and control it
+;   check-requires (ckreq): check the `require's of a module
+;   log: control log output
+;   install!: install xrepl in your Racket init file

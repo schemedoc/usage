@@ -1,0 +1,57 @@
+Welcome to Scheme 48 1.9.2 (made by *GOK* on 2020-04-06)
+See http://s48.org/ for more information.
+Please report bugs to scheme-48-bugs@s48.org.
+Get more information at http://www.s48.org/.
+Type ,? (comma question-mark) for help.
+> ,?
+This is Scheme 48.  You are interacting with the command processor.
+A command is either a Scheme form to evaluate or one of the following:
+
+ ,? [<command-name>]             ,open <struct> ...
+ ,bound? <name>                  ,pop
+ ,build <exp> <filename> <option> ... ,preview
+ ,collect                        ,proceed <exp>
+ ,condition                      ,push
+ ,config [<command>]             ,q
+ ,config-package-is <struct>     ,reload-package <struct>
+ ,d                              ,reset [<number>]
+ ,debug                          ,resume [<number>]
+ ,dis [<exp>]                    ,run <exp>
+ ,dump <filename>                ,set <setting> [<on-or-off-or-literal-or-?>]
+ ,exec [<command>]               ,set-reader <reader>
+ ,exit [<status>]                ,show-default-package <filename>
+ ,exit-when-done [<status>]      ,show-interface <struct> ...
+ ,expand [<form>]                ,show-known-packages
+ ,flush [<kind> ...]             ,structure <name> <interface>
+ ,for-syntax [<command>]         ,template
+ ,forget <filename>              ,threads
+ ,go <exp>                       ,time <command>
+ ,help [<command-name>]          ,trace <name> ...
+ ,in <struct> [<command>]        ,translate <from> <to>
+ ,inspect [<exp>]                ,u
+ ,keep [<kind> ...]              ,undefine <name>
+ ,load <filename> ...            ,unset <setting>
+ ,load-package <struct>          ,untrace <name> ...
+ ,load-script <filename> ...     ,user [<command>]
+ ,menu                           ,user-package-is [<struct>]
+ ,new-package [<struct> ...]     ,where [<procedure>]
+
+Square brackets [...] indicate optional arguments.
+
+The following settings are set by the `set' and `unset' commands:
+
+ ask-before-loading       (off, will not ask before loading modules)
+ batch                    (off, will prompt and will not exit on errors)
+ break-on-warnings        (off, will not enter breakpoint on warnings)
+ condition-writing-depth  (5, maximum writing depth for conditions)
+ condition-writing-length (6, maximum writing length for conditions)
+ inline-values            (off, will not compile calls in line)
+ inspector-menu-limit     (15, maximum number of menu entries in inspector)
+ inspector-writing-depth  (3, maximum writing depth in inspector)
+ inspector-writing-length (5, maximum writing length in inspector)
+ levels                   (on, will push command level on errors)
+ load-noisily             (off, will not notify when loading modules and files)
+ trace-writing-depth      (8, writing depth for traces)
+
+The expression ## evaluates to the last value displayed by the command
+processor.

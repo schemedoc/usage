@@ -1,0 +1,9 @@
+> ,help
+"Commands:
+   ,help             - show this
+   ,words            - list all current definitions
+   ,expand <expr>    - expand macros in the expression
+   ,find [regex|sym] - list all defined words matching regex or m/<sym>/
+   ,libraries        - show all currently loaded libraries
+   ,l                - || -
+   ,quit             - exit owl"

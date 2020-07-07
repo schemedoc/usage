@@ -1,0 +1,96 @@
+scheme@(guile-user)> ,help
+Help Commands [abbrev]:
+
+ ,help [all | GROUP | [-c] COMMAND]
+                              [,h] - Show help.
+ ,show [TOPIC]                     - Gives information about Guile.
+ ,apropos REGEXP              [,a] - Find bindings/modules/packages.
+ ,describe OBJ                [,d] - Show description/documentation.
+
+Command Groups:
+
+ ,help all                         - List all commands
+ ,help module                      - List module commands
+ ,help language                    - List language commands
+ ,help compile                     - List compile commands
+ ,help profile                     - List profile commands
+ ,help debug                       - List debug commands
+ ,help inspect                     - List inspect commands
+ ,help system                      - List system commands
+
+Type `,help -c COMMAND' to show documentation of a particular command.
+
+
+
+scheme@(guile-user)> ,help all                                                                                                                                               [30/409]
+Help Commands [abbrev]:
+
+ ,help [all | GROUP | [-c] COMMAND]
+                              [,h] - Show help.
+ ,show [TOPIC]                     - Gives information about Guile.
+ ,apropos REGEXP              [,a] - Find bindings/modules/packages.
+ ,describe OBJ                [,d] - Show description/documentation.
+
+Module Commands [abbrev]:
+
+ ,module [MODULE]             [,m] - Change modules / Show current module.
+ ,import [MODULE ...]       [,use] - Import modules / List those imported.
+ ,load FILE                   [,l] - Load a file in the current module.
+ ,reload [MODULE]            [,re] - Reload the given module, or the current module if none was given.
+ ,binding                     [,b] - List current bindings.
+ ,in MODULE COMMAND-OR-EXPRESSION  - Evaluate an expression or command in the context of module.
+
+Language Commands [abbrev]:
+
+ ,language LANGUAGE           [,L] - Change languages.
+
+Compile Commands [abbrev]:
+
+ ,compile EXP                 [,c] - Generate compiled code.
+ ,compile-file FILE          [,cc] - Compile a file.
+ ,expand EXP                [,exp] - Expand any macros in a form.
+ ,optimize EXP              [,opt] - Run the optimizer on a piece of code and print the result.
+ ,disassemble EXP             [,x] - Disassemble a compiled procedure.
+ ,disassemble-file FILE      [,xx] - Disassemble a file.
+
+Profile Commands [abbrev]:
+
+ ,time EXP                    [,t] - Time execution.
+ ,profile EXP                [,pr] - Profile execution.
+ ,trace EXP                  [,tr] - Trace execution.
+
+Debug Commands [abbrev]:
+
+ ,backtrace [COUNT] [#:width W] [#:full? F]
+                             [,bt] - Print a backtrace.
+ ,up [COUNT]                       - Select a calling stack frame.
+ ,down [COUNT]                     - Select a called stack frame.
+ ,frame [IDX]                [,fr] - Show a frame.
+ ,locals                           - Show local variables.
+ ,error-message           [,error] - Show error message.
+ ,break PROCEDURE        [,br ,bp] - Break on calls to PROCEDURE.
+ ,break-at-source FILE LINE
+                   [,break-at ,bs] - Break when control reaches the given source location.
+ ,step                        [,s] - Step until control reaches a different source location.
+ ,step-instruction           [,si] - Step until control reaches a different instruction.
+ ,next                        [,n] - Step until control reaches a different source location in the current frame.
+ ,next-instruction           [,ni] - Step until control reaches a different instruction in the current frame.
+ ,finish                           - Run until the current frame finishes.
+ ,tracepoint PROCEDURE       [,tp] - Add a tracepoint to PROCEDURE.
+ ,traps                            - Show the set of currently attached traps.
+ ,delete IDX                [,del] - Delete a trap.
+ ,disable IDX                      - Disable a trap.
+ ,enable IDX                       - Enable a trap.
+ ,registers                [,regs] - Print registers.
+
+Inspect Commands [abbrev]:
+
+ ,inspect EXP                 [,i] - Inspect the result(s) of evaluating EXP.
+ ,pretty-print EXP           [,pp] - Pretty-print the result(s) of evaluating EXP.
+
+System Commands [abbrev]:
+
+ ,gc                               - Garbage collection.
+ ,statistics               [,stat] - Display statistics.
+ ,option [NAME] [EXP]         [,o] - List/show/set options.
+ ,quit        [,q ,continue ,cont] - Quit this session.

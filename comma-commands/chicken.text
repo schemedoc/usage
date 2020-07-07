@@ -1,0 +1,23 @@
+#;1> ,?
+Toplevel commands:
+
+ ,?                Show this text
+ ,p EXP            Pretty print evaluated expression EXP
+ ,d EXP            Describe result of evaluated expression EXP
+ ,du EXP           Dump data of expression EXP
+ ,dur EXP N        Dump range
+ ,q                Quit interpreter
+ ,l FILENAME ...   Load one or more files
+ ,ln FILENAME ...  Load one or more files and print result of each top-level expression
+ ,r                Show system information
+ ,h                Show history of expression results
+ ,ch               Clear history of expression results
+ ,e FILENAME       Run external editor
+ ,s TEXT ...       Execute shell-command
+ ,exn              Describe last exception
+ ,c                Show call-chain of most recent error
+ ,f N              Select frame N
+ ,g NAME           Get variable NAME from current frame
+ ,t EXP            Evaluate form and print elapsed time
+ ,x EXP            Pretty print expanded expression EXP
+ ,m MODULE         switch to module with name `MODULE'

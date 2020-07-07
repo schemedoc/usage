@@ -1,0 +1,32 @@
+(these are not really comma commands)
+
+1 ]=> ^C
+Interrupt option (? for help):
+
+The quit character is `^C' (control-C).
+When typed, various interrupt options are offered.
+Type `^C' followed by `?' for a list of options.
+
+The interrupt character is `^G' (control-G).
+When typed, scheme will get the ^G character interrupt.
+The default action is to abort the running program,
+and to resume the top level read-eval-print loop.
+
+The terminal stop character is `^Z' (control-Z).
+When typed, scheme will suspend execution.
+
+Interrupt option (? for help):
+
+^B: Enter a breakpoint loop.
+^C: Goto to top level read-eval-print (REP) loop.
+^L: Clear the screen.
+^U: Up to previous (lower numbered) REP loop.
+^X: Abort to current REP loop.
+D: Debugging: change interpreter flags.
+E: Examine memory location.
+H: Print simple information on interrupts.
+I: Ignore interrupt request.
+Q: Quit instantly, killing Scheme.
+R: Hard reset, possibly killing Scheme in the process.
+T: Stack trace.
+Z: Quit instantly, suspending Scheme.

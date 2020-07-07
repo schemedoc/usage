@@ -1,0 +1,6 @@
+Scheme 9 from Empty Space (Reimagined)
+> ,?
+,a = apropos
+,h = help
+,l = load-from-library
+,q = quit

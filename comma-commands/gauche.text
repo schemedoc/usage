@@ -1,0 +1,24 @@
+gosh> ,help
+You're in REPL (read-eval-print-loop) of Gauche shell.
+Type a Scheme expression to evaluate.
+Evaluate (exit) to exit REPL.
+A word preceded with comma has special meaning.  Type ,help <cmd>
+to see the detailed help for <cmd>.
+Commands can be abbreviated as far as it is not ambiguous.
+
+ ,apropos|a  Show the names of global bindings that match the regexp.
+ ,cd         Change the current directory.
+ ,describe|d Describe the object.
+ ,help|h     Show the help message of the command.
+ ,history    Show REPL history.
+ ,info|doc   Show info document for an entry of NAME, or search entries by REGEXP.
+ ,load|l     Load the specified file.
+ ,print-all|pa
+             Print previous result (*1) without abbreviation.
+ ,print-mode|pm
+             View/set print-mode of REPL.
+ ,pwd        Print working directory.
+ ,reload|r   Reload the specified module, using gauche.reload.
+ ,sh         Run command via shell.
+ ,source     Show source code of the procedure if it's available.
+ ,use|u      Use the specified module.  Same as (use module option ...).
