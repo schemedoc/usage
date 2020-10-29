@@ -1,0 +1,32 @@
+[Runtime options] 
+
+ -:?              display this text
+ -:c              always treat stdin as console
+ -:d              enable debug output
+ -:D              enable more debug output
+ -:g              show GC information
+ -:o              disable stack overflow checks
+ -:hiSIZE         set initial heap size
+ -:hmSIZE         set maximal heap size
+ -:hgPERCENTAGE   set heap growth percentage
+ -:hsPERCENTAGE   set heap shrink percentage
+ -:huPERCENTAGE   set percentage of memory used at which heap will be shrunk
+ -:hSIZE          set fixed heap size
+ -:r              write trace output to stderr
+ -:p              collect statistical profile and write to file at exit
+ -:PFREQUENCY     like -:p, specifying sampling frequency in us (default: 10000)
+ -:sSIZE          set nursery (stack) size
+ -:tSIZE          set symbol-table size
+ -:fSIZE          set maximal number of pending finalizers
+ -:x              deliver uncaught exceptions of other threads to primordial one
+ -:b              enter REPL on error
+ -:B              sound bell on major GC
+ -:G              force GUI mode
+ -:aSIZE          set trace-buffer/call-chain size
+ -:ASIZE          set fixed temporary stack size
+ -:H              dump heap state on exit
+ -:S              do not handle segfaults or other serious conditions
+
+  SIZE may have a `k' (`K'), `m' (`M') or `g' (`G') suffix, meaning size
+  times 1024, 1048576, and 1073741824, respectively.
+
