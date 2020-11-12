@@ -1,4 +1,4 @@
-stklos (version 1.31)
+stklos 1.50
 Usage: stklos [option ...] [--] [arg ... ]
 Possible options:
    -l file, --load=file        load 'file' before going interactive
@@ -9,11 +9,12 @@ Possible options:
    -q, --no-init-file          quiet: do not load the user init file
    -i, --interactive           interactive mode
    -n, --no-line-editor        don't use line editor
-   -d, --debug                 add informations to ease debugging
+   -d, --debug                 add information to ease debugging
    -s, --stack-size=n          use a stack of size n (default 100000)
    -c, --case-sensitive        be case sensitive by default
-       --case-insensitive      be case incensitive by default
+       --case-insensitive      be case insensitive by default
    -u, --utf8-encoding=yes|no  use/don't use UTF-8 encoding (instead of default)
-   -v, --version               print program version and exit
-   -h, --help                  print this help and exit
+   -v, --version               show version and exit (simple)
+   -V                          show version and exit (detailed, SRFI-176)
+   -h, --help                  show this help and exit
 All the arguments given after options are passed to the Scheme program.
