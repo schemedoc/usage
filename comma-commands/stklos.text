@@ -1,5 +1,8 @@
 stklos> ,help
 Available Commands:
 - ,backtrace ,bt   Show the stack when last error occurred
+- ,cd              Change current directory
+- ,pwd             Print working directory
 - ,quit ,q         Exit STklos
+- ,shell ,!        Run a shell command
 - ,help ,? ,h      This help
